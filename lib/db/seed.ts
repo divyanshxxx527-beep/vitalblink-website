@@ -1,4 +1,4 @@
-import { stripe } from '../payments/stripe';
+
 import { db } from './drizzle';
 import { users, teams, teamMembers } from './schema';
 import { hashPassword } from '@/lib/auth/session';
