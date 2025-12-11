@@ -15,7 +15,7 @@ export default function RequirementsPage() {
                     System <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Requirements</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    VitalBlink is designed to run efficiently on modern hardware with minimal requirements
+                    Runs on modern hardware with minimal requirements.
                 </p>
             </div>
 
@@ -460,7 +460,7 @@ export default function RequirementsPage() {
                     Ready to Get Started?
                 </h3>
                 <p className="text-xl mb-8 text-indigo-100">
-                    Try VitalBlink free for 30 days with no credit card required
+                    Try VitalBlink — 30-day trial, no credit card.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link href="/trial">

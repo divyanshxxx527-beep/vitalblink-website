@@ -1,11 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  experimental: {
-    ppr: true,
-    clientSegmentCache: true,
-    nodeMiddleware: true
-  }
+  // output: 'export', // Temporarily disabled to fix localStorage error
+  images: { unoptimized: true }
 };
 
 export default nextConfig;

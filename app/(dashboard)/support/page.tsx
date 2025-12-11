@@ -22,22 +22,14 @@ export default function SupportPage() {
 
             {/* Contact Methods */}
             <section className="mb-16">
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-8">
                     <ContactCard
                         icon={<Mail className="h-8 w-8" />}
                         title="Email Support"
                         description="Send us an email and we'll respond within 24 hours"
-                        contact="support@vitalblink.com"
+                        contact="vitalblink.services@gmail.com"
                         action="Send Email"
                         color="blue"
-                    />
-                    <ContactCard
-                        icon={<MessageCircle className="h-8 w-8" />}
-                        title="Live Chat"
-                        description="Chat with our support team in real-time"
-                        contact="Available Mon-Fri, 9AM-6PM"
-                        action="Start Chat"
-                        color="green"
                     />
                     <ContactCard
                         icon={<Book className="h-8 w-8" />}

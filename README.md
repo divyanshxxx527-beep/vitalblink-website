@@ -1,34 +1,35 @@
-# Next.js SaaS Starter
+# VitalBlink Website
 
-This is a starter template for building a SaaS application using **Next.js** with support for authentication, Stripe integration for payments, and a dashboard for logged-in users.
+This is the official website for **VitalBlink**, a comprehensive hospital management system designed for healthcare facilities. It features a modern marketing site with detailed product information, pricing, documentation, and download links for the VitalBlink software and VitalSphere browser.
 
-**Demo: [https://next-saas-start.vercel.app/](https://next-saas-start.vercel.app/)**
+**Live Site: [https://vitalblink-website.vercel.app/](https://vitalblink-website.vercel.app/)**
 
 ## Features
 
-- Marketing landing page (`/`) with animated Terminal element
-- Pricing page (`/pricing`) which connects to Stripe Checkout
-- Dashboard pages with CRUD operations on users/teams
-- Basic RBAC with Owner and Member roles
+- Marketing landing page with animated elements and countdown timer
+- Product showcase for VitalBlink hospital management system
+- VitalSphere browser download and information
+- Pricing page with Stripe integration
+- Dashboard pages for user management and activity logging
+- Authentication system with JWT cookies
 - Subscription management with Stripe Customer Portal
-- Email/password authentication with JWTs stored to cookies
-- Global middleware to protect logged-in routes
-- Local middleware to protect Server Actions or validate Zod schemas
-- Activity logging system for any user events
+- Comprehensive documentation and feature pages
+- Responsive design with Tailwind CSS
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [Postgres](https://www.postgresql.org/)
-- **ORM**: [Drizzle](https://orm.drizzle.team/)
+- **Framework**: [Next.js](https://nextjs.org/) 15
+- **Database**: [Postgres](https://www.postgresql.org/) with [Drizzle](https://orm.drizzle.team/)
 - **Payments**: [Stripe](https://stripe.com/)
-- **UI Library**: [shadcn/ui](https://ui.shadcn.com/)
+- **UI Library**: [shadcn/ui](https://ui.shadcn.com/) with Tailwind CSS
+- **Authentication**: JWT with cookies
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/nextjs/saas-starter
-cd saas-starter
+git clone https://github.com/divyanshxxx527-beep/vitalblink-website
+cd vitalblink-website
 pnpm install
 ```
 
@@ -84,7 +85,7 @@ To test Stripe payments, use the following test card details:
 
 ## Going to Production
 
-When you're ready to deploy your SaaS application to production, follow these steps:
+When you're ready to deploy the VitalBlink website to production, follow these steps:
 
 ### Set up a production Stripe webhook
 
@@ -108,12 +109,14 @@ In your Vercel project settings (or during deployment), add all the necessary en
 4. `POSTGRES_URL`: Set this to your production database URL.
 5. `AUTH_SECRET`: Set this to a random string. `openssl rand -base64 32` will generate one.
 
-## Other Templates
+## About VitalBlink
 
-While this template is intentionally minimal and to be used as a learning resource, there are other paid versions in the community which are more full-featured:
+VitalBlink is a complete hospital management system with:
+- 26+ medical departments
+- Patient records and billing
+- Inventory management
+- Advanced security and role-based access
+- Local deployment (no internet required)
+- VitalSphere browser for medical imaging and tools
 
-- https://achromatic.dev
-- https://shipfa.st
-- https://makerkit.dev
-- https://zerotoshipped.com
-- https://turbostarter.dev
+For more information, visit the [VitalBlink website](https://vitalblink-website.vercel.app/).

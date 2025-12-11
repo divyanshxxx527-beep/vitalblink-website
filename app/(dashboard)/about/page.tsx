@@ -23,9 +23,7 @@ export default function AboutPage() {
                     One Blink, <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Full Control</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    VitalBlink is a comprehensive hospital management system designed to streamline healthcare
-                    operations, enhance patient care, and ensure data security across all medical departments.
-                    <strong className="text-indigo-600 font-semibold"> Runs locally on your server</strong> without requiring internet connection.
+                    Discover the story behind VitalBlink and our commitment to transforming healthcare management.
                 </p>
             </div>
 
@@ -50,10 +48,7 @@ export default function AboutPage() {
                                         The Problem
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed">
-                                        As a medical student, I witnessed firsthand the inefficiencies plaguing healthcare systems.
-                                        Written paper reports that frequently got lost or damaged, no centralized system to track
-                                        patient information across departments, and outdated software with minimal features and
-                                        terrible user interfaces that made every task feel like a struggle.
+                                        As a medical student, I saw paper records, fragmented data, and outdated software slowing care.
                                     </p>
                                 </div>
                                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-green-200">
@@ -62,9 +57,7 @@ export default function AboutPage() {
                                         The Solution
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed">
-                                        That's when VitalBlink was born. A comprehensive hospital management system designed
-                                        from the ground up with healthcare professionals in mind. Modern technology, intuitive
-                                        interfaces, and powerful features that actually make healthcare work better.
+                                        VitalBlink was created to fix those issues: modern, intuitive software tailored for hospitals.
                                     </p>
                                 </div>
                             </div>
@@ -75,9 +68,7 @@ export default function AboutPage() {
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Driven by Experience</h3>
                                     <p className="text-gray-700 leading-relaxed mb-6">
-                                        Every feature in VitalBlink was built with real healthcare challenges in mind.
-                                        From the frustrations of paper-based systems to the limitations of existing software,
-                                        we created something that actually solves the problems healthcare workers face every day.
+                                        Built from real-world experience, VitalBlink focuses on practical, easy-to-use solutions.
                                     </p>
                                     <div className="grid grid-cols-2 gap-4 text-center">
                                         <div className="bg-white/90 rounded-lg p-4 shadow-sm">
@@ -349,7 +340,7 @@ export default function AboutPage() {
                     </h2>
                     <p className="text-xl text-indigo-100 mb-8 leading-relaxed">
                         Join healthcare facilities worldwide using VitalBlink for complete hospital management.
-                        One-time purchase, no recurring fees, lifetime updates included.
+                        One-time purchase — lifetime updates included.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/pricing" className="w-full sm:w-auto group">

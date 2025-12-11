@@ -58,9 +58,7 @@ export default function ContactPage() {
                             icon={<Mail className="h-6 w-6 text-blue-600" />}
                             label="Email Addresses"
                             lines={[
-                                { text: 'sales@vitalblink.com', subtext: 'Sales & Licensing', bold: true },
-                                { text: 'support@vitalblink.com', subtext: 'Technical Support' },
-                                { text: 'info@vitalblink.com', subtext: 'General Inquiries' }
+                                { text: 'vitalblink.services@gmail.com', subtext: 'Sales, Support & General Inquiries', bold: true }
                             ]}
                         />
 

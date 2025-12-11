@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import {
   ArrowRight, Heart, Shield, Zap, Users, Activity, Database, FileText, TrendingUp,
@@ -15,6 +16,28 @@ export default function HomePage() {
   const { ref: statsRef, isIntersecting: statsVisible } = useIntersectionObserver();
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const launchDate = new Date('2025-12-11T11:00:00');
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const diff = launchDate.getTime() - now.getTime();
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,22 +64,8 @@ export default function HomePage() {
   return (
     <main>
       {/* Sleek Auto-Hide Trial Banner */}
-      <section className={`bg-gradient-to-r from-emerald-50/80 via-green-50/80 to-emerald-100/80 py-5 sticky top-0 z-50 shadow-lg overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-sm border-b border-white/30 ${isBannerVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      <section className={`bg-gradient-to-r from-emerald-50/80 via-green-50/80 to-emerald-100/80 py-5 md:sticky md:top-0 md:z-50 shadow-lg overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-sm border-b border-white/30 ${isBannerVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}>
-        {/* Enhanced Floating Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-10 w-20 h-20 bg-gradient-to-br from-emerald-300/30 to-emerald-400/30 rounded-full blur-xl animate-float-slow opacity-70"></div>
-          <div className="absolute top-2 right-20 w-14 h-14 bg-gradient-to-br from-green-400/40 to-emerald-500/40 rounded-full blur-lg animate-float-medium opacity-80"></div>
-          <div className="absolute bottom-0 left-1/3 w-10 h-10 bg-gradient-to-br from-emerald-500/35 to-green-600/35 rounded-full blur-xl animate-float-fast opacity-60"></div>
-          <div className="absolute top-1 right-1/4 w-8 h-8 bg-gradient-to-br from-green-600/45 to-emerald-700/45 rounded-full blur-lg animate-pulse-slow opacity-90"></div>
-          <div className="absolute bottom-2 right-10 w-12 h-12 bg-gradient-to-br from-emerald-400/30 to-green-500/30 rounded-full blur-2xl animate-float-medium-reverse opacity-75"></div>
-
-          {/* Additional sleek particles */}
-          <div className="absolute top-1/2 left-1/5 w-3 h-3 bg-emerald-500/50 rounded-full animate-particle-float opacity-80"></div>
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-emerald-600/60 rounded-full animate-particle-float opacity-90" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/3 left-2/3 w-2.5 h-2.5 bg-green-500/50 rounded-full animate-particle-float opacity-70" style={{ animationDelay: '2s' }}></div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link href="/trial" className="block group">
             <div className="flex items-center justify-center gap-6 text-gray-900 cursor-pointer hover:scale-102 transition-all duration-300 magnetic-hover interactive-card p-5 rounded-3xl backdrop-blur-sm border border-white/40 shadow-lg hover:shadow-emerald-500/30 hover:border-white/60">
@@ -85,27 +94,6 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 overflow-hidden">
-        {/* Enhanced Floating Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Main floating orbs */}
-          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-indigo-500/20 rounded-full blur-xl animate-float-slow opacity-80"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-full blur-2xl animate-float-medium opacity-70"></div>
-          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-indigo-400/10 to-purple-500/10 rounded-full blur-lg animate-float-fast opacity-60"></div>
-          <div className="absolute top-1/3 right-10 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-xl animate-float-slow-reverse opacity-75"></div>
-          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-full blur-2xl animate-float-medium-reverse opacity-65"></div>
-
-          {/* Additional morphing shapes */}
-          <div className="absolute top-32 left-1/3 w-12 h-12 bg-gradient-to-br from-indigo-500/30 to-blue-600/30 animate-morph opacity-50"></div>
-          <div className="absolute bottom-32 right-1/4 w-8 h-8 bg-gradient-to-br from-cyan-500/25 to-teal-600/25 rounded-full animate-pulse-slow opacity-60"></div>
-          <div className="absolute top-1/2 left-20 w-6 h-6 bg-gradient-to-br from-purple-500/40 to-pink-600/40 rounded-full animate-bounce-slow opacity-70"></div>
-          <div className="absolute top-3/4 right-1/4 w-10 h-10 bg-gradient-to-br from-emerald-500/20 to-green-600/20 animate-spin-slow opacity-55"></div>
-
-          {/* Particle effects */}
-          <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-indigo-500/60 rounded-full animate-particle-float opacity-80"></div>
-          <div className="absolute top-2/3 right-1/5 w-1.5 h-1.5 bg-cyan-500/70 rounded-full animate-particle-float opacity-90" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/4 left-1/5 w-2.5 h-2.5 bg-purple-500/50 rounded-full animate-particle-float opacity-75" style={{ animationDelay: '2s' }}></div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
@@ -113,13 +101,39 @@ export default function HomePage() {
                 <Heart className="h-4 w-4 mr-2 animate-pulse" />
                 <span className="text-sm font-semibold">Professional Healthcare Software</span>
               </div>
-              <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl leading-tight animate-fade-in-up animation-delay-200">
+              {/* Launch Countdown */}
+              <div className="mb-6 animate-fade-in-up animation-delay-200">
+                <div className="inline-flex flex-col sm:flex-row items-center bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 px-4 sm:px-8 py-4 rounded-full shadow-lg border-2 border-orange-200">
+                  <div className="flex items-center mb-2 sm:mb-0 sm:mr-6">
+                    <Clock className="h-6 w-6 mr-4 animate-pulse" />
+                    <span className="text-lg sm:text-xl font-bold">Launch Countdown:</span>
+                  </div>
+                  <div className="flex gap-2 sm:gap-6 text-center">
+                    <div className="flex flex-col">
+                      <span className="text-3xl sm:text-5xl font-black">{timeLeft.days}</span>
+                      <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Days</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-3xl sm:text-5xl font-black">{timeLeft.hours}</span>
+                      <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Hours</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-3xl sm:text-5xl font-black">{timeLeft.minutes}</span>
+                      <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Minutes</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-3xl sm:text-5xl font-black">{timeLeft.seconds}</span>
+                      <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Seconds</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl leading-tight animate-fade-in-up animation-delay-400">
                 Complete Hospital Management System
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 mt-2 animate-fade-in-up animation-delay-400">One Blink, Full Control</span>
               </h1>
               <p className="mt-6 text-lg text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed animate-fade-in-up animation-delay-600">
-                Professional hospital management system with <strong className="text-indigo-600 font-semibold">26+ medical departments</strong>, complete patient records,
-                billing, inventory, and advanced features. <span className="text-indigo-700 font-semibold">Runs locally on your server</span> with role-based user access control - <strong className="text-gray-800">no internet required</strong>.
+                Streamline operations with department-based tools, patient records, billing, inventory, and analytics. Runs locally — offline capable.
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 animate-fade-in-up animation-delay-800">
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -177,14 +191,13 @@ export default function HomePage() {
               </div>
             </div>
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center animate-fade-in-right animation-delay-400">
-              <div className="relative w-full h-96 bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-600 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl hover:scale-105 transition-all duration-500 group">
-                <div className="absolute inset-0 bg-grid-white/10"></div>
+              <div className="relative w-full h-96 bg-transparent rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl hover:scale-105 transition-all duration-500 group">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center p-8 relative z-10">
-                    <div className="inline-flex items-center justify-center w-32 h-32 mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <div className="relative w-32 h-32">
+                  <div className="text-gray-900 text-center p-8 relative z-10">
+                    <div className="inline-flex items-center justify-center w-48 h-48 mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <div className="relative w-48 h-48">
                         <Image
-                          src="/default_logo.png"
+                          src="/logo.png"
                           alt="VitalBlink Logo"
                           fill
                           className="object-contain drop-shadow-2xl"
@@ -192,11 +205,11 @@ export default function HomePage() {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold mb-3 group-hover:scale-105 transition-transform duration-300">VitalBlink</h3>
-                    <p className="text-indigo-100 text-lg font-medium">Professional Healthcare Management</p>
+                    <p className="text-gray-600 text-lg font-medium">Professional Healthcare Management</p>
                     <div className="mt-6 flex justify-center gap-2">
-                      <span className="w-3 h-3 bg-white rounded-full animate-pulse"></span>
-                      <span className="w-3 h-3 bg-white rounded-full animate-pulse delay-75"></span>
-                      <span className="w-3 h-3 bg-white rounded-full animate-pulse delay-150"></span>
+                      <span className="w-3 h-3 bg-gray-900 rounded-full animate-pulse"></span>
+                      <span className="w-3 h-3 bg-gray-900 rounded-full animate-pulse delay-75"></span>
+                      <span className="w-3 h-3 bg-gray-900 rounded-full animate-pulse delay-150"></span>
                     </div>
                   </div>
                 </div>
@@ -208,7 +221,6 @@ export default function HomePage() {
 
       {/* Statistics Section */}
       <section ref={statsRef} className="py-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-gray-100/50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
             <div className={`group cursor-pointer glass-effect-ultra border border-white/20 rounded-2xl p-6 hover:shadow-lg hover:scale-105 hover:border-white/30 transition-all duration-300 interactive-card hover-lift ${statsVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
@@ -253,7 +265,6 @@ export default function HomePage() {
 
       {/* Free Trial Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-50 via-green-50 to-emerald-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 px-6 py-3 rounded-full mb-6 border-2 border-emerald-300 shadow-lg">
@@ -264,8 +275,7 @@ export default function HomePage() {
               30-Day <span className="text-emerald-700">Free Trial</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Experience VitalBlink Pro with full access to all features. No credit card required.
-              No limitations. Test it in your hospital environment before making a decision.
+              Try VitalBlink free for 30 days with complete access to all features.
             </p>
           </div>
 
@@ -319,328 +329,94 @@ export default function HomePage() {
               </Button>
             </Link>
             <p className="text-sm text-gray-500 mt-4">
-              No credit card • Full access • 30 days to explore
+              No credit card • All features • 30-day trial
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white w-full">
+      {/* Key Features Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-6 py-2.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-4 border-2 border-indigo-200">
-              Why Choose VitalBlink
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 hover:text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">
-              Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Complete Hospital Management</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">VitalBlink</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive hospital management solution trusted by healthcare facilities worldwide
+              Complete hospital management solution with advanced features for modern healthcare facilities.
             </p>
           </div>
-          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-indigo-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Users className="h-7 w-7" />
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-indigo-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <Users className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                  Complete Hospital Operations
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Patient management, appointments, queue system, OT control, floor planning, parking management,
-                  sterilization tracking, and scanner integration for comprehensive hospital workflow.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                26+ Specialized Departments
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Cardiology, Neurology, Emergency, Pediatrics, Surgery, Radiology, Pathology, and more with department-specific tools.
+              </p>
             </div>
 
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-emerald-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-emerald-600 to-green-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Shield className="h-7 w-7" />
-                </div>
+            <div className="group bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-emerald-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-emerald-600 to-green-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <Shield className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
-                  Secure & Compliant
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Role-based user access control, complete audit logging, secure medical data storage,
-                  and features designed to support healthcare compliance standards. All data stays on your local server.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                Secure & Compliant
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Role-based access, audit logging, secure data storage. All data stays on your local server.
+              </p>
             </div>
 
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-purple-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Zap className="h-7 w-7" />
-                </div>
+            <div className="group bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-purple-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <Database className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                  26+ Specialized Departments
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Cardiology with ECG, Neurology, Emergency triage, Pediatrics, Surgery OR scheduling,
-                  Radiology DICOM viewer, Pathology labs, and 20+ more with department-specific tools.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                Complete Patient Management
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Electronic health records, appointment scheduling, medical history, and secure patient data management.
+              </p>
             </div>
 
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-cyan-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-cyan-600 to-teal-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Database className="h-7 w-7" />
-                </div>
+            <div className="group bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-cyan-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-cyan-600 to-teal-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <FileText className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">
-                  Complete Patient Management
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Electronic health records, appointment scheduling, medical history tracking,
-                  visit documentation, and secure patient data management with controlled user access.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">
+                Billing & Inventory
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Automated billing, insurance claims, inventory tracking for supplies, pharmacy, and equipment.
+              </p>
             </div>
 
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-rose-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-rose-600 to-pink-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <FileText className="h-7 w-7" />
-                </div>
+            <div className="group bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-rose-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-rose-600 to-pink-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <BarChart3 className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-rose-600 transition-colors">
-                  Billing & Inventory
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Automated billing with PDF invoices, insurance claims processing,
-                  inventory for medical supplies, pharmacy, equipment with real-time stock alerts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hospital Services Section */}
-      <section className="py-16 bg-gradient-to-br from-indigo-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">Comprehensive Hospital Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Beyond departments - complete hospital operations management
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ServiceCard
-              icon={<Syringe className="h-6 w-6" />}
-              title="Blood Bank Management"
-              description="Donor registration, blood type inventory, transfusion records, and expiration tracking"
-            />
-            <ServiceCard
-              icon={<Ambulance className="h-6 w-6" />}
-              title="Ambulance Services"
-              description="Fleet management, driver scheduling, trip logging, and emergency coordination"
-            />
-            <ServiceCard
-              icon={<Building2 className="h-6 w-6" />}
-              title="Morgue Management"
-              description="Body tracking, autopsy records, chain of custody, and respectful documentation"
-            />
-            <ServiceCard
-              icon={<Heart className="h-6 w-6" />}
-              title="Vaccination Center"
-              description="Vaccine inventory, immunization scheduling, certificate generation, and tracking"
-            />
-            <ServiceCard
-              icon={<Users className="h-6 w-6" />}
-              title="Café Management"
-              description="Hospital food service with menu planning, order tracking, and nutrition management"
-            />
-            <ServiceCard
-              icon={<Activity className="h-6 w-6" />}
-              title="Veterinary Services"
-              description="Animal healthcare management integrated with hospital systems"
-            />
-            <ServiceCard
-              icon={<Calendar className="h-6 w-6" />}
-              title="Queue Management"
-              description="Real-time patient queue system with Socket.IO, announcements, and lobby display"
-            />
-            <ServiceCard
-              icon={<Building2 className="h-6 w-6" />}
-              title="OT Control & Pre-Op"
-              description="Operating theater scheduling, supplies, sterilization, and surgical planning"
-            />
-            <ServiceCard
-              icon={<Lock className="h-6 w-6" />}
-              title="Parking Management"
-              description="Hospital parking allocation, vehicle tracking, and access control"
-            />
-            <ServiceCard
-              icon={<Building2 className="h-6 w-6" />}
-              title="Floor Plan Management"
-              description="Interactive hospital floor plans, room allocation, and navigation"
-            />
-            <ServiceCard
-              icon={<Activity className="h-6 w-6" />}
-              title="Patient Scanner System"
-              description="Patient identification and workflow management system"
-            />
-            <ServiceCard
-              icon={<Microscope className="h-6 w-6" />}
-              title="Medical Image Viewer"
-              description="Medical imaging viewer for radiology with secure storage"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Core Features Grid */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">Powerful Core Features</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Advanced tools and systems for complete hospital management
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard
-              icon={<BarChart3 className="h-6 w-6" />}
-              title="Real-time Analytics"
-              description="Live dashboards, patient statistics, department performance, and custom reports"
-            />
-            <FeatureCard
-              icon={<Shield className="h-6 w-6" />}
-              title="Secure Data Export"
-              description="Export patient data securely with file protection and controlled sharing capabilities"
-            />
-            <FeatureCard
-              icon={<Users className="h-6 w-6" />}
-              title="User Management"
-              description="Role-based access with admin, doctor, nurse, receptionist, and staff user roles"
-            />
-            <FeatureCard
-              icon={<Clock className="h-6 w-6" />}
-              title="Appointment System"
-              description="Multi-provider scheduling, recurring appointments, SMS/email reminders"
-            />
-            <FeatureCard
-              icon={<Database className="h-6 w-6" />}
-              title="Medication Database"
-              description="ICD code injector, drug information, interaction checking"
-            />
-            <FeatureCard
-              icon={<Lock className="h-6 w-6" />}
-              title="Hospital Data Management"
-              description="Secure system for managing hospital data with controlled access and permissions"
-            />
-            <FeatureCard
-              icon={<FileText className="h-6 w-6" />}
-              title="Master Reports"
-              description="Comprehensive reporting system with PDF/Excel exports and analytics"
-            />
-            <FeatureCard
-              icon={<Activity className="h-6 w-6" />}
-              title="Notification System"
-              description="Real-time notifications, Telegram bot integration, alert management"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">Secure & Reliable Platform</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Runs locally on your hospital server without requiring internet connection
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <TechCard
-              title="Deployment"
-              items={['Localhost deployment', 'No internet required', 'Your server, your data', 'Multi-user support', 'Cross-platform compatible']}
-            />
-            <TechCard
-              title="Security"
-              items={['Role-based access control', 'Secure user authentication', 'Complete audit logging', 'Data backup & recovery', 'Controlled access levels']}
-            />
-            <TechCard
-              title="Features"
-              items={['Real-time updates', 'PDF report generation', 'Excel exports', 'Multi-department support', 'Comprehensive analytics']}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-cyan-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-cyan-600 to-blue-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Database className="h-7 w-7" />
-                </div>
-              </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">
-                  Localhost Deployment
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Runs entirely on your hospital's local server - no internet connection required.
-                  Your data stays with you, secure and private. Full control over your infrastructure.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-rose-600 transition-colors">
+                Real-time Analytics
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Live dashboards, patient statistics, department performance, and custom reports for data-driven decisions.
+              </p>
             </div>
 
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-amber-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-amber-600 to-orange-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Users className="h-7 w-7" />
-                </div>
+            <div className="group bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-amber-400 transition-all duration-300">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-amber-600 to-orange-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <Lock className="h-7 w-7" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
-                  Role-Based Access
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Multiple user roles including admin, doctors, nurses, receptionists, and staff.
-                  Each role has specific permissions and access levels for secure operation.
-                </p>
-              </div>
-            </div>
-
-            <div className="group mb-8 lg:mb-0 bg-gradient-to-br from-violet-50 to-purple-50 border-2 border-violet-200 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 hover:border-violet-400 transition-all duration-300">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-violet-600 to-purple-700 text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <TrendingUp className="h-7 w-7" />
-                </div>
-              </div>
-              <div className="mt-5">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
-                  Analytics & Reports
-                </h2>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Real-time dashboards, custom reports, data analytics with insights,
-                  and comprehensive audit logging for compliance.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
+                Local Deployment
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Runs entirely on your hospital server. No internet required. Your data stays secure and private.
+              </p>
             </div>
           </div>
         </div>
@@ -648,47 +424,45 @@ export default function HomePage() {
 
       {/* VitalSphere Browser Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
             <div>
               <span className="inline-block px-6 py-2.5 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-sm font-bold mb-6 border-2 border-blue-200">
                 VitalSphere Browser
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Complete Your Healthcare <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Ecosystem</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                VitalSphere Browser complements VitalBlink with advanced medical imaging, ECG analysis,
-                drug interaction checking, and comprehensive medical tools - all in a secure desktop application.
+                VitalSphere Browser complements VitalBlink with advanced medical imaging, ECG analysis, drug interaction checking, and comprehensive medical tools.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-md">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <span className="ml-4 text-gray-700 font-medium text-base">Medical Image Viewer</span>
                 </div>
-                <div className="flex items-center group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
                   <span className="ml-4 text-gray-700 font-medium text-base">ECG Analysis</span>
                 </div>
-                <div className="flex items-center group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-lg flex items-center justify-center shadow-md">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                     </svg>
                   </div>
                   <span className="ml-4 text-gray-700 font-medium text-base">Drug Interactions</span>
                 </div>
-                <div className="flex items-center group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center shadow-md">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
@@ -739,84 +513,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-            <div>
-              <span className="inline-block px-6 py-2.5 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-bold mb-6 border-2 border-indigo-200">
-                Get Started Today
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 hover:text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-600 hover:px-8 hover:py-4 hover:rounded-2xl hover:shadow-2xl transition-all duration-300 inline-block cursor-pointer">
-                Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Healthcare Facility?</span>
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Join healthcare facilities worldwide that trust VitalBlink for comprehensive
-                hospital management. Get started today with our professional software solution.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="ml-4 text-gray-700 font-medium text-base">One-time purchase, no recurring fees</span>
-                </li>
-                <li className="flex items-start group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="ml-4 text-gray-700 font-medium text-base">Localhost deployment - no internet required</span>
-                </li>
-                <li className="flex items-start group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="ml-4 text-gray-700 font-medium text-base">Role-based user access control</span>
-                </li>
-                <li className="flex items-start group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="ml-4 text-gray-700 font-medium text-base">Unlimited users and departments</span>
-                </li>
-                <li className="flex items-start group">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="ml-4 text-gray-700 font-medium text-base">Lifetime software updates included</span>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12 lg:mt-0">
-              <div className="flex flex-col gap-5">
-                <Link href="/pricing" className="w-full group">
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-size-200 bg-pos-0 group-hover:bg-pos-100 transition-all duration-500"></div>
-                    <Button
-                      size="lg"
-                      className="relative text-xl rounded-2xl w-full font-bold py-8 transition-all duration-300 bg-transparent hover:bg-transparent shadow-2xl group-hover:shadow-indigo-500/50"
-                    >
-                      <span className="flex items-center justify-center">
-                        View Pricing Plans
-                        <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform duration-300" />
-                      </span>
-                    </Button>
-                  </div>
-                </Link>
-                <Link href="/screenshots" className="w-full group">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-xl rounded-2xl w-full border-3 border-indigo-300 text-indigo-700 hover:bg-white hover:border-indigo-500 font-bold py-8 transition-all duration-300 shadow-lg hover:shadow-xl bg-white/80 backdrop-blur-sm"
-                  >
-                    <span className="flex items-center justify-center">
-                      See Screenshots
-                      <Eye className="ml-3 h-7 w-7 group-hover:scale-125 transition-transform duration-300" />
-                    </span>
-                  </Button>
-                </Link>
-              </div>
-            </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-indigo-600 via-indigo-700 to-cyan-600 rounded-3xl p-12 text-center text-white shadow-2xl mx-4 sm:mx-6 lg:mx-8">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4">
+            Ready to Transform Your Healthcare Facility?
+          </h2>
+          <p className="text-xl text-indigo-100 mb-8 leading-relaxed">
+            Join healthcare facilities worldwide. One-time purchase — lifetime updates included.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/pricing" className="w-full sm:w-auto group">
+              <Button
+                size="lg"
+                className="text-lg rounded-full bg-white text-indigo-600 hover:bg-gray-100 hover:scale-105 w-full font-bold py-6 shadow-xl transition-all duration-300 ripple-effect interactive-card"
+              >
+                View Pricing
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link href="/screenshots" className="w-full sm:w-auto group">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg rounded-full bg-indigo-500 hover:bg-indigo-400 border-2 border-white text-white w-full font-bold py-6 transition-all duration-300 hover:scale-105 ripple-effect interactive-card"
+              >
+                See Screenshots
+                <Eye className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -824,82 +549,3 @@ export default function HomePage() {
   );
 }
 
-function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  const colors = [
-    { bg: 'from-blue-50 to-cyan-50', border: 'border-blue-200', hover: 'hover:border-blue-400', icon: 'text-blue-600', iconBg: 'from-blue-500 to-cyan-600' },
-    { bg: 'from-indigo-50 to-purple-50', border: 'border-indigo-200', hover: 'hover:border-indigo-400', icon: 'text-indigo-600', iconBg: 'from-indigo-500 to-purple-600' },
-    { bg: 'from-emerald-50 to-green-50', border: 'border-emerald-200', hover: 'hover:border-emerald-400', icon: 'text-emerald-600', iconBg: 'from-emerald-500 to-green-600' },
-    { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', hover: 'hover:border-rose-400', icon: 'text-rose-600', iconBg: 'from-rose-500 to-pink-600' },
-    { bg: 'from-amber-50 to-orange-50', border: 'border-amber-200', hover: 'hover:border-amber-400', icon: 'text-amber-600', iconBg: 'from-amber-500 to-orange-600' },
-    { bg: 'from-cyan-50 to-teal-50', border: 'border-cyan-200', hover: 'hover:border-cyan-400', icon: 'text-cyan-600', iconBg: 'from-cyan-500 to-teal-600' },
-  ];
-  const colorIndex = title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-  const color = colors[colorIndex];
-
-  return (
-    <div className={`group bg-gradient-to-br ${color.bg} border-2 ${color.border} ${color.hover} rounded-2xl p-6 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden relative`}>
-      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${color.iconBg} opacity-10 rounded-bl-full transform translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500`}></div>
-      <div className="relative z-10">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="relative">
-            <div className={`absolute inset-0 bg-gradient-to-br ${color.iconBg} rounded-xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity`}></div>
-            <div className={`relative ${color.icon} group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md`}>{icon}</div>
-          </div>
-          <h3 className="font-bold text-gray-900 text-lg group-hover:scale-105 transition-all duration-300">{title}</h3>
-        </div>
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-      </div>
-    </div>
-  );
-}
-
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  const colors = [
-    { bg: 'from-indigo-50 to-blue-50', border: 'border-indigo-200', hover: 'hover:border-indigo-400', icon: 'text-indigo-600', iconBg: 'from-indigo-500 to-blue-600' },
-    { bg: 'from-purple-50 to-violet-50', border: 'border-purple-200', hover: 'hover:border-purple-400', icon: 'text-purple-600', iconBg: 'from-purple-500 to-violet-600' },
-    { bg: 'from-emerald-50 to-green-50', border: 'border-emerald-200', hover: 'hover:border-emerald-400', icon: 'text-emerald-600', iconBg: 'from-emerald-500 to-green-600' },
-    { bg: 'from-cyan-50 to-teal-50', border: 'border-cyan-200', hover: 'hover:border-cyan-400', icon: 'text-cyan-600', iconBg: 'from-cyan-500 to-teal-600' },
-    { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', hover: 'hover:border-rose-400', icon: 'text-rose-600', iconBg: 'from-rose-500 to-pink-600' },
-    { bg: 'from-amber-50 to-orange-50', border: 'border-amber-200', hover: 'hover:border-amber-400', icon: 'text-amber-600', iconBg: 'from-amber-500 to-orange-600' },
-  ];
-  const colorIndex = title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-  const color = colors[colorIndex];
-
-  return (
-    <div className={`group relative bg-gradient-to-br ${color.bg} border-2 ${color.border} ${color.hover} rounded-2xl p-6 hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer`}>
-      <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${color.iconBg} opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-500`}></div>
-      <div className="relative z-10">
-        <div className="relative mb-4">
-          <div className={`absolute inset-0 bg-gradient-to-br ${color.iconBg} rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity`}></div>
-          <div className={`relative ${color.icon} w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>{icon}</div>
-        </div>
-        <h3 className="font-bold text-gray-900 mb-3 text-lg">{title}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-      </div>
-    </div>
-  );
-}
-
-function TechCard({ title, items }: { title: string; items: string[] }) {
-  const colors = [
-    { bg: 'from-indigo-50 to-blue-50', border: 'border-indigo-200', hover: 'hover:border-indigo-400', text: 'text-indigo-600', check: 'text-indigo-600', titleHover: 'group-hover:text-indigo-600' },
-    { bg: 'from-emerald-50 to-green-50', border: 'border-emerald-200', hover: 'hover:border-emerald-400', text: 'text-emerald-600', check: 'text-emerald-600', titleHover: 'group-hover:text-emerald-600' },
-    { bg: 'from-purple-50 to-violet-50', border: 'border-purple-200', hover: 'hover:border-purple-400', text: 'text-purple-600', check: 'text-purple-600', titleHover: 'group-hover:text-purple-600' },
-  ];
-  const colorIndex = title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-  const color = colors[colorIndex];
-
-  return (
-    <div className={`group bg-gradient-to-br ${color.bg} border-2 ${color.border} ${color.hover} rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300`}>
-      <h3 className={`text-2xl font-bold text-gray-900 mb-6 ${color.titleHover} transition-colors duration-300`}>{title}</h3>
-      <ul className="space-y-3">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">
-            <CheckCircle className={`h-5 w-5 ${color.check} mr-3 flex-shrink-0 group-hover:scale-110 transition-transform duration-300`} />
-            <span className="font-medium">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}

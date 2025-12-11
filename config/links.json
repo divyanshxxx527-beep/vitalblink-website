@@ -1,0 +1,90 @@
+{
+  "app": {
+    "downloads": {
+      "installer": {
+        "name": "VitalBlink Setup (Windows)",
+        "url": "https://vitalblink.gumroad.com/l/vitalblink-setup",
+        "fileName": "VitalBlink_Setup.exe",
+        "description": "Complete installation package for Windows",
+        "fileSize": "250 MB",
+        "version": "1.0.0",
+        "lastUpdated": "2025-12-10"
+      },
+      "clinic": {
+        "name": "VitalBlink Clinic Edition",
+        "url": "https://vitalblink.gumroad.com/l/ejwxuf?wanted=true",
+        "price": 299,
+        "originalPrice": 399,
+        "description": "Perfect for Small Clinics - Choose 1 Medical Department",
+        "version": "1.0.0"
+      },
+      "plus": {
+        "name": "VitalBlink Plus Edition",
+        "url": "https://vitalblink.gumroad.com/l/ypucsz?wanted=true",
+        "price": 499,
+        "originalPrice": 619,
+        "description": "Multi-department management for growing healthcare facilities - Choose 5 Departments",
+        "version": "1.0.0"
+      },
+      "pro": {
+        "name": "VitalBlink Pro Edition",
+        "url": "https://vitalblink.gumroad.com/l/pjrxf?wanted=true",
+        "price": 699,
+        "originalPrice": 899,
+        "description": "The ultimate hospital management system with all 26+ Medical Departments",
+        "version": "1.0.0"
+      },
+      "vitalsphere": {
+        "name": "VitalSphere Browser",
+        "url": "https://www.dropbox.com/scl/fi/krki2raw90ed8sk18yq6v/VitalSphere_setup.exe?rlkey=y4chduyyzi4rencjocokturxq&st=enwhzk5q&dl=1",
+        "fileName": "VitalSphere_setup.exe",
+        "description": "Cross-platform medical browser with DICOM imaging and privacy features",
+        "fileSize": "478 MB",
+        "version": "1.0.0",
+        "lastUpdated": "2025-12-10"
+      },
+      "vitalblink_trial": {
+        "name": "VitalBlink Trial",
+        "url": "https://www.dropbox.com/scl/fi/me0kqld0cem5d91j0bt0l/Vitalblink.zip?rlkey=t9vpa954gk0w9z29dhdt000le&st=hizmk7ml&dl=0",
+        "fileName": "Vitalblink.zip",
+        "description": "VitalBlink trial version for evaluation",
+        "version": "1.0.0",
+        "lastUpdated": "2025-12-11"
+      }
+    },
+    "credentials": {
+      "appPassword": "admin123",
+      "adminUsername": "admin",
+      "adminPassword": "superadmin123",
+      "note": "Change all passwords immediately after first login"
+    },
+    "contact": {
+      "email": "vitalblink.services@gmail.com",
+      "support": "vitalblink.services@gmail.com",
+      "sales": "vitalblink.services@gmail.com"
+    },
+    "social": {
+      "twitter": "https://x.com/vitalblink",
+      "youtube": "https://www.youtube.com/channel/UCfFuZTlKNywVmA1v8GzuP4Q",
+      "github": "https://github.com/divyanshxxx527-beep"
+    },
+    "documentation": {
+      "setup": "/setup",
+      "features": "/features",
+      "departments": "/departments",
+      "pricing": "/pricing",
+      "support": "/support",
+      "documentation": "/documentation",
+      "vitalsphere": "/vitalsphere",
+      "vitalsphereThankYou": "/vitalsphere-thank-you"
+    }
+  },
+  "metadata": {
+    "appName": "VitalBlink",
+    "appVersion": "1.0.0",
+    "company": "VitalBlink",
+    "description": "Complete Hospital Management System with 26+ Medical Departments",
+    "lastModified": "2025-12-10",
+    "author": "VitalBlink Team"
+  }
+}

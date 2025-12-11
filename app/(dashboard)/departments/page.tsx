@@ -10,14 +10,13 @@ export default function DepartmentsPage() {
             {/* Header */}
             <div className="text-center mb-16">
                 <span className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
-                    Complete Department Coverage
+                    26+ Departments
                 </span>
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">26+</span> Medical Departments
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Comprehensive support for all major medical specialties with department-specific workflows,
-                    forms, tests, and documentation systems
+                    Support for department-specific workflows and documentation.
                 </p>
             </div>
 
@@ -29,7 +28,7 @@ export default function DepartmentsPage() {
                         icon: <AlertCircle />,
                         name: "Emergency Medicine",
                         code: "emergency",
-                        description: "Critical care with triage system, trauma protocols, and rapid response workflows",
+                        description: "Triage, trauma, and critical care",
                         features: [
                             "Patient triage and priority assessment",
                             "Trauma and critical care protocols",
@@ -50,7 +49,7 @@ export default function DepartmentsPage() {
                         icon: <Heart />,
                         name: "Cardiology",
                         code: "cardiology",
-                        description: "Heart and cardiovascular care with ECG, echocardiography, and cardiac assessments",
+                        description: "ECG, echocardiography, and cardiac care",
                         features: [
                             "ECG recording and analysis",
                             "Echocardiography management",
@@ -64,7 +63,7 @@ export default function DepartmentsPage() {
                         icon: <Wind />,
                         name: "Pulmonology",
                         code: "pulmonology",
-                        description: "Respiratory care including lung function tests and breathing assessments",
+                        description: "Lung function tests and respiratory care",
                         features: [
                             "Pulmonary function tests",
                             "Respiratory history",
@@ -85,7 +84,7 @@ export default function DepartmentsPage() {
                         icon: <BrainCircuit />,
                         name: "Neurology",
                         code: "neurology",
-                        description: "Brain and nervous system disorders with neurological assessments",
+                        description: "Neurological assessments and care",
                         features: [
                             "Neurological examination forms",
                             "EEG and EMG tracking",
@@ -99,7 +98,7 @@ export default function DepartmentsPage() {
                         icon: <Users />,
                         name: "Psychiatry",
                         code: "psychiatry",
-                        description: "Mental health services with psychiatric evaluations and treatment plans",
+                        description: "Psychiatric evaluations and treatment plans",
                         features: [
                             "Psychiatric assessments",
                             "Mental status examinations",
@@ -120,7 +119,7 @@ export default function DepartmentsPage() {
                         icon: <Bone />,
                         name: "Orthopedics",
                         code: "orthopedics",
-                        description: "Bone and joint care with fracture management and mobility assessments",
+                        description: "Fracture management and mobility assessments",
                         features: [
                             "Musculoskeletal assessments",
                             "Fracture documentation",
@@ -134,7 +133,7 @@ export default function DepartmentsPage() {
                         icon: <PersonStanding />,
                         name: "Physiotherapy",
                         code: "physiotherapy",
-                        description: "Physical rehabilitation with exercise programs and mobility tracking",
+                        description: "Rehabilitation programs and mobility tracking",
                         features: [
                             "Rehabilitation assessments",
                             "Exercise program management",
@@ -148,7 +147,7 @@ export default function DepartmentsPage() {
                         icon: <Gauge />,
                         name: "Rheumatology",
                         code: "rheumatology",
-                        description: "Arthritis and autoimmune disorder management",
+                        description: "Arthritis and autoimmune care",
                         features: [
                             "Joint assessment forms",
                             "Autoimmune disease tracking",
@@ -169,7 +168,7 @@ export default function DepartmentsPage() {
                         icon: <Activity />,
                         name: "General Surgery",
                         code: "surgery",
-                        description: "Surgical planning, OR management, and post-operative care",
+                        description: "Surgical planning and OR management",
                         features: [
                             "Pre-operative checklists",
                             "Surgical procedure documentation",
@@ -190,7 +189,7 @@ export default function DepartmentsPage() {
                         icon: <Baby />,
                         name: "Pediatrics",
                         code: "pediatrics",
-                        description: "Child healthcare with growth charts and vaccination tracking",
+                        description: "Growth charts and vaccination tracking",
                         features: [
                             "Growth and development charts",
                             "Vaccination schedules",
@@ -204,7 +203,7 @@ export default function DepartmentsPage() {
                         icon: <Heart />,
                         name: "Obstetrics & Gynecology",
                         code: "obgyn",
-                        description: "Women's health including prenatal care and reproductive health",
+                        description: "Prenatal care and reproductive health",
                         features: [
                             "Prenatal care tracking",
                             "Obstetric history",
@@ -225,7 +224,7 @@ export default function DepartmentsPage() {
                         icon: <Scan />,
                         name: "Radiology",
                         code: "radiology",
-                        description: "Medical imaging with DICOM viewer and encrypted storage",
+                        description: "DICOM imaging and secure storage",
                         features: [
                             "X-ray management",
                             "CT and MRI tracking",
@@ -239,7 +238,7 @@ export default function DepartmentsPage() {
                         icon: <Microscope />,
                         name: "Pathology",
                         code: "pathology",
-                        description: "Laboratory services with test management and result tracking",
+                        description: "Lab tests and result tracking",
                         features: [
                             "Lab test ordering",
                             "Specimen tracking",
@@ -253,7 +252,7 @@ export default function DepartmentsPage() {
                         icon: <TestTube />,
                         name: "Hematology",
                         code: "haematology",
-                        description: "Blood disorders and transfusion medicine",
+                        description: "Blood disorders and transfusion records",
                         features: [
                             "Blood count analysis",
                             "Coagulation studies",
@@ -274,7 +273,7 @@ export default function DepartmentsPage() {
                         icon: <Eye />,
                         name: "Ophthalmology",
                         code: "ophthalmology",
-                        description: "Eye care and vision services with visual acuity testing",
+                        description: "Vision testing and eye care",
                         features: [
                             "Visual acuity testing",
                             "Eye examination forms",
@@ -288,7 +287,7 @@ export default function DepartmentsPage() {
                         icon: <Ear />,
                         name: "ENT (Otolaryngology)",
                         code: "ent",
-                        description: "Ear, nose, and throat care with audiology integration",
+                        description: "ENT care with audiology",
                         features: [
                             "ENT examinations",
                             "Hearing tests",
@@ -302,7 +301,7 @@ export default function DepartmentsPage() {
                         icon: <Droplet />,
                         name: "Nephrology",
                         code: "nephrology",
-                        description: "Kidney disease management and dialysis services",
+                        description: "Renal care and dialysis",
                         features: [
                             "Renal function tests",
                             "Dialysis scheduling",
@@ -316,7 +315,7 @@ export default function DepartmentsPage() {
                         icon: <Droplet />,
                         name: "Urology",
                         code: "urology",
-                        description: "Urinary system and reproductive health",
+                        description: "Urinary and reproductive health",
                         features: [
                             "Urological assessments",
                             "Prostate examinations",
@@ -337,7 +336,7 @@ export default function DepartmentsPage() {
                         icon: <Dna />,
                         name: "Endocrinology",
                         code: "endocrinology",
-                        description: "Diabetes and hormone disorder management",
+                        description: "Diabetes and endocrine care",
                         features: [
                             "Diabetes management",
                             "Thyroid function tracking",
@@ -351,7 +350,7 @@ export default function DepartmentsPage() {
                         icon: <Sandwich />,
                         name: "Gastroenterology",
                         code: "gastroenterology",
-                        description: "Digestive system care with endoscopy management",
+                        description: "Endoscopy and digestive care",
                         features: [
                             "GI assessments",
                             "Endoscopy documentation",
@@ -365,7 +364,7 @@ export default function DepartmentsPage() {
                         icon: <Sparkles />,
                         name: "Infectious Diseases",
                         code: "infectious",
-                        description: "Infectious disease management and epidemiology tracking",
+                        description: "Infection control and outbreak tracking",
                         features: [
                             "Infection tracking",
                             "Antimicrobial therapy",
@@ -386,7 +385,7 @@ export default function DepartmentsPage() {
                         icon: <Activity />,
                         name: "Oncology",
                         code: "oncology",
-                        description: "Cancer care with treatment planning and monitoring",
+                        description: "Cancer treatment planning and monitoring",
                         features: [
                             "Cancer staging",
                             "Chemotherapy protocols",
@@ -407,7 +406,7 @@ export default function DepartmentsPage() {
                         icon: <TestTube2 />,
                         name: "Dentistry",
                         code: "dentistry",
-                        description: "Oral health with dental charting and procedure tracking",
+                        description: "Dental charting and procedure tracking",
                         features: [
                             "Dental charting",
                             "Oral examinations",
@@ -421,7 +420,7 @@ export default function DepartmentsPage() {
                         icon: <Sparkles />,
                         name: "Dermatology",
                         code: "dermatology",
-                        description: "Skin condition management with image documentation",
+                        description: "Skin condition care and imaging",
                         features: [
                             "Skin assessments",
                             "Lesion documentation",
@@ -442,7 +441,7 @@ export default function DepartmentsPage() {
                         icon: <Stethoscope />,
                         name: "General Medicine",
                         code: "medicine",
-                        description: "Primary care with comprehensive patient assessments",
+                        description: "Primary care and general assessments",
                         features: [
                             "General examinations",
                             "Chronic disease management",
@@ -456,7 +455,7 @@ export default function DepartmentsPage() {
                         icon: <Pill />,
                         name: "Pharmacy",
                         code: "pharmacy",
-                        description: "Medication dispensing and pharmaceutical care",
+                        description: "Medication dispensing and pharmacy care",
                         features: [
                             "Prescription management",
                             "Drug interaction checking",
@@ -477,7 +476,7 @@ export default function DepartmentsPage() {
                         icon: <Heart />,
                         name: "Veterinary Services",
                         code: "veterinary",
-                        description: "Animal healthcare integrated with hospital systems",
+                        description: "Animal patient records and veterinary care",
                         features: [
                             "Animal patient records",
                             "Veterinary examinations",
@@ -498,15 +497,15 @@ export default function DepartmentsPage() {
                 <div className="grid md:grid-cols-3 gap-6">
                     <FeatureHighlight
                         title="Custom Workflows"
-                        description="Department-specific forms, assessments, and documentation tailored to specialty requirements"
+                        description="Department-specific forms, assessments, and docs"
                     />
                     <FeatureHighlight
                         title="Test Management"
-                        description="Order, track, and document specialty-specific tests and procedures with results integration"
+                        description="Order and track tests with results integration"
                     />
                     <FeatureHighlight
                         title="Secure Documentation"
-                        description="Encrypted storage, audit trails, and role-based access for all patient records and medical data"
+                        description="Encrypted storage, audit trails, and role-based access"
                     />
                 </div>
             </section>
@@ -514,10 +513,10 @@ export default function DepartmentsPage() {
             {/* CTA */}
             <section className="mt-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 rounded-3xl p-12 text-center text-white shadow-2xl hover:shadow-3xl transition-shadow duration-300">
                 <h2 className="text-4xl font-bold mb-4">
-                    Experience Comprehensive Department Management
+                    Streamline Department Management
                 </h2>
                 <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Get started with VitalBlink and streamline your entire hospital operation
+                    Streamline hospital operations — One-time purchase — lifetime updates included.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/pricing" className="w-full sm:w-auto group">

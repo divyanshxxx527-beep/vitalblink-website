@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'VitalBlink - Complete Hospital Management System',
   description: 'Professional hospital management software with 26+ medical departments, patient records, billing, inventory, and advanced security. One blink, full control.',
   icons: {
-    icon: '/default_logo.png',
-    shortcut: '/default_logo.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/default_logo.png',
   },
 };

@@ -1,8 +1,11 @@
 import { Check, Heart, Zap, Sparkles, Crown, Building2, Stethoscope, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { getAllEditions } from '@/lib/config';
 
 export default async function PricingPage() {
+  const editions = getAllEditions();
+  
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-in fade-in duration-500">
       {/* Trial Banner */}
@@ -14,7 +17,7 @@ export default async function PricingPage() {
               <h3 className="text-2xl font-bold">30-Day Free Trial Available!</h3>
             </div>
             <p className="text-lg text-emerald-50">
-              Try VitalBlink Pro with all features unlocked. No credit card required.
+              Try VitalBlink Pro with all features unlocked. No credit card.
             </p>
           </div>
         </Link>
@@ -25,7 +28,7 @@ export default async function PricingPage() {
           Choose Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Edition</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-          One-time purchase. No subscriptions. Lifetime updates included.
+          One-time purchase — lifetime updates included.
         </p>
       </div>
 
@@ -33,12 +36,12 @@ export default async function PricingPage() {
       <div className="grid lg:grid-cols-3 gap-8 mb-16">
         {/* Clinic Edition */}
         <EditionCard
-          name="VitalBlink Clinic"
+          name={editions.clinic.name}
           icon={<Building2 className="h-8 w-8" />}
-          price={299}
-          originalPrice={399}
+          price={editions.clinic.price}
+          originalPrice={editions.clinic.originalPrice}
           tagline="Perfect for Small Clinics"
-          description="Essential hospital management for single-department clinics"
+          description={editions.clinic.description}
           imagePath="/edition/vitalblink clinic.png"
           features={[
             'Choose 1 Medical Department',
@@ -51,48 +54,20 @@ export default async function PricingPage() {
             'Lifetime Updates',
             'Email Support'
           ]}
-          gumroadLink="https://gumroad.com/l/vitalblink-clinic"
+          gumroadLink={editions.clinic.url}
           highlighted={false}
           color="from-cyan-500 to-teal-600"
         />
 
-        {/* Plus Edition - HIGHLIGHTED */}
+        {/* Pro Edition - HIGHLIGHTED */}
         <EditionCard
-          name="VitalBlink Plus"
-          icon={<Stethoscope className="h-8 w-8" />}
-          price={499}
-          originalPrice={619}
-          tagline="Most Popular Choice"
-          badge="BEST VALUE"
-          description="Multi-department management for growing healthcare facilities"
-          imagePath="/edition/vitalblink plus.png"
-          features={[
-            'Choose 5 Medical Departments',
-            'Unlimited Users & Patients',
-            'Complete Patient Records (EHR)',
-            'Appointment Scheduling',
-            'Advanced Billing System',
-            'Full Inventory Management',
-            'Blood Bank & Pharmacy',
-            'Medical Image Encryption',
-            'Audit Logging & Reports',
-            'Backup & Recovery System',
-            'Lifetime Software Updates',
-            'Priority Email Support'
-          ]}
-          gumroadLink="https://gumroad.com/l/vitalblink-plus"
-          highlighted={true}
-          color="from-indigo-500 to-purple-600"
-        />
-
-        {/* Pro Edition */}
-        <EditionCard
-          name="VitalBlink Pro"
+          name={editions.pro.name}
           icon={<Crown className="h-8 w-8" />}
-          price={699}
-          originalPrice={899}
+          price={editions.pro.price}
+          originalPrice={editions.pro.originalPrice}
           tagline="Complete Enterprise Solution"
-          description="The ultimate hospital management system with everything included"
+          badge="BEST VALUE"
+          description={editions.pro.description}
           imagePath="/edition/vitalblink pro.png"
           features={[
             'All 26+ Medical Departments',
@@ -112,9 +87,37 @@ export default async function PricingPage() {
             'Lifetime Software Updates',
             'Priority Technical Support'
           ]}
-          gumroadLink="https://gumroad.com/l/vitalblink-pro"
-          highlighted={false}
+          gumroadLink={editions.pro.url}
+          highlighted={true}
           color="from-amber-500 to-orange-600"
+        />
+
+        {/* Plus Edition */}
+        <EditionCard
+          name={editions.plus.name}
+          icon={<Stethoscope className="h-8 w-8" />}
+          price={editions.plus.price}
+          originalPrice={editions.plus.originalPrice}
+          tagline="Most Popular Choice"
+          description={editions.plus.description}
+          imagePath="/edition/vitalblink plus.png"
+          features={[
+            'Choose 5 Medical Departments',
+            'Unlimited Users & Patients',
+            'Complete Patient Records (EHR)',
+            'Appointment Scheduling',
+            'Advanced Billing System',
+            'Full Inventory Management',
+            'Blood Bank & Pharmacy',
+            'Medical Image Encryption',
+            'Audit Logging & Reports',
+            'Backup & Recovery System',
+            'Lifetime Software Updates',
+            'Priority Email Support'
+          ]}
+          gumroadLink={editions.plus.url}
+          highlighted={false}
+          color="from-indigo-500 to-purple-600"
         />
       </div>
 
@@ -142,27 +145,10 @@ export default async function PricingPage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-400 relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border-2 border-amber-400 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-600 text-white px-4 py-1 rounded-full text-xs font-bold">
                 RECOMMENDED
               </div>
-              <h4 className="font-bold text-lg text-indigo-700 mb-3">VitalBlink Plus</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex items-start">
-                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span><strong>$499</strong> - Choose 5 departments</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Best value for growing facilities</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Advanced features included</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-xl p-6 border-2 border-amber-200">
               <h4 className="font-bold text-lg text-amber-700 mb-3">VitalBlink Pro</h4>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start">
@@ -179,6 +165,23 @@ export default async function PricingPage() {
                 </li>
               </ul>
             </div>
+            <div className="bg-white rounded-xl p-6 border-2 border-indigo-200">
+              <h4 className="font-bold text-lg text-indigo-700 mb-3">VitalBlink Plus</h4>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start">
+                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span><strong>$499</strong> - Choose 5 departments</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Best value for growing facilities</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Advanced features included</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -191,7 +194,7 @@ export default async function PricingPage() {
         <div className="space-y-6">
           <FAQItem
             question="Is this a one-time payment or subscription?"
-            answer="All VitalBlink products are one-time purchases. No recurring fees, no subscriptions. Pay once, use forever."
+            answer="One-time purchase with lifetime updates."
           />
           <FAQItem
             question="Do I get lifetime updates?"
@@ -259,9 +262,9 @@ function EditionCard({
 
   return (
     <div
-      className={`group relative bg-white rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer hover-lift interactive-card animate-slide-in-up ${highlighted
-        ? 'border-4 border-indigo-500 shadow-2xl scale-105 z-10 hover:scale-110'
-        : 'border-2 border-gray-200 hover:border-indigo-400 hover:shadow-2xl hover:scale-110'
+      className={`group relative bg-white rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer animate-slide-in-up ${highlighted
+        ? 'border-4 border-indigo-500 shadow-2xl scale-105 z-10'
+        : 'border-2 border-gray-200'
         }`}
       style={{ animationDelay: `${highlighted ? '0.2' : '0.1'}s` }}
     >
@@ -278,13 +281,12 @@ function EditionCard({
         </div>
       )}
 
-      {/* Animated background gradient on hover */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 transition-opacity duration-500`}></div>
 
       <div className="p-8 relative z-10">
         {/* Large Icon with animation - Replaces the image */}
         <div className="flex justify-center mb-6">
-          <div className={`inline-flex items-center justify-center w-32 h-32 rounded-3xl bg-gradient-to-br ${color} text-white shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+          <div className={`inline-flex items-center justify-center w-32 h-32 rounded-3xl bg-gradient-to-br ${color} text-white shadow-2xl transition-all duration-500`}>
             <div className="scale-150">
               {icon}
             </div>
@@ -293,7 +295,7 @@ function EditionCard({
 
         {/* Header */}
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">{name}</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2 transition-colors duration-300">{name}</h3>
           <p className="text-sm text-indigo-600 font-semibold mb-3 uppercase tracking-wide">{tagline}</p>
 
           {/* Pricing with strikethrough original price */}
@@ -308,7 +310,7 @@ function EditionCard({
                 </span>
               </div>
             )}
-            <div className="text-5xl font-bold group-hover:scale-110 transition-transform duration-300 inline-block">
+            <div className="text-5xl font-bold transition-transform duration-300 inline-block">
               <span className={`${highlighted ? 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600' : 'text-green-600'}`}>
                 ${price}
               </span>
@@ -322,38 +324,25 @@ function EditionCard({
           </div>
 
           <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+
+          <div className="text-center mb-4">
+            <a href={gumroadLink} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110">
+                Buy {name.split(' ')[1]}
+              </Button>
+            </a>
+          </div>
         </div>
 
         {/* Features with hover effect */}
         <ul className="space-y-3 mb-8">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start text-sm group/item hover:translate-x-2 transition-transform duration-200">
-              <Check className={`h-5 w-5 ${highlighted ? 'text-indigo-600' : 'text-gray-600'} mr-2 mt-0.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200`} />
-              <span className="text-gray-700 group-hover/item:text-gray-900 group-hover/item:font-medium transition-all duration-200">{feature}</span>
+            <li key={index} className="flex items-start text-sm transition-transform duration-200">
+              <Check className={`h-5 w-5 ${highlighted ? 'text-indigo-600' : 'text-gray-600'} mr-2 mt-0.5 flex-shrink-0 transition-transform duration-200`} />
+              <span className="text-gray-700 transition-all duration-200">{feature}</span>
             </li>
           ))}
         </ul>
-
-        {/* CTA Button with enhanced interaction */}
-        <a
-          href={gumroadLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
-          <Button
-            size="lg"
-            className={`w-full rounded-full font-bold transition-all duration-500 group-hover:scale-105 ripple-effect ${highlighted
-              ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-size-200 bg-pos-0 hover:bg-pos-100 text-white shadow-xl hover:shadow-2xl'
-              : 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-size-200 bg-pos-0 hover:bg-pos-100 text-white hover:shadow-2xl'
-              }`}
-          >
-            <span className="flex items-center justify-center">
-              Purchase {name.split(' ')[1]}
-              <Sparkles className="ml-2 h-5 w-5 group-hover:animate-spin" />
-            </span>
-          </Button>
-        </a>
       </div>
     </div>
   );
@@ -361,8 +350,8 @@ function EditionCard({
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <div className="group bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer hover-lift interactive-card animate-slide-in-up" style={{ animationDelay: `${Math.abs(question.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % 8 * 0.1}s` }}>
-      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">{question}</h3>
+    <div className="group bg-white border-2 border-gray-200 rounded-xl p-6 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${Math.abs(question.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % 8 * 0.1}s` }}>
+      <h3 className="text-lg font-semibold text-gray-900 mb-2 transition-colors duration-300">{question}</h3>
       <p className="text-gray-700 leading-relaxed">{answer}</p>
     </div>
   );

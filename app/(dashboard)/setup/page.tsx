@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronDown, Download, Wifi, Lock, User, Settings, CheckCircle, AlertCircle, Info, Monitor, Smartphone, Laptop } from 'lucide-react';
+import { getDownloadLink, getCredentials } from '@/lib/config';
 
 // SVG Animation Components
 const InstallationSVG = () => (
@@ -191,11 +192,19 @@ const AdminLoginSVG = () => (
         <circle cx="115" cy="190" r="4" fill="#1F2937" />
         <circle cx="130" cy="190" r="4" fill="#1F2937" />
         <circle cx="145" cy="190" r="4" fill="#1F2937" />
+        <circle cx="160" cy="190" r="4" fill="#1F2937" />
+        <circle cx="175" cy="190" r="4" fill="#1F2937" />
+        <circle cx="190" cy="190" r="4" fill="#1F2937" />
+        <circle cx="205" cy="190" r="4" fill="#1F2937" />
+        <circle cx="220" cy="190" r="4" fill="#1F2937" />
+        <circle cx="235" cy="190" r="4" fill="#1F2937" />
+        <circle cx="250" cy="190" r="4" fill="#1F2937" />
+        <circle cx="265" cy="190" r="4" fill="#1F2937" />
 
         {/* Warning */}
         <rect x="70" y="220" width="260" height="35" fill="#FEE2E2" stroke="#FECACA" strokeWidth="1" rx="5" />
-        <text x="80" y="238" fontSize="11" fill="#DC2626">⚠ Change default password immediately!</text>
-        <text x="80" y="252" fontSize="10" fill="#991B1B">Use strong password with letters, numbers, symbols</text>
+        <text x="80" y="238" fontSize="11" fill="#DC2626">⚠ Default: superadmin123 - Change immediately!</text>
+        <text x="80" y="252" fontSize="10" fill="#991B1B">App Password: admin123 | Use strong passwords!</text>
 
         {/* Login Button */}
         <rect x="70" y="270" width="260" height="20" fill="url(#greenGradient)" rx="3" />
@@ -371,9 +380,12 @@ export default function SetupPage() {
             color: 'from-red-600 to-red-700',
             description: 'Login as admin and configure your system',
             details: [
+                '⚠️ Default Application Password (Required First):',
+                'App Password: admin123 (enter this when prompted)',
+                '',
                 'On the login page, enter default admin credentials:',
                 'Username: admin',
-                'Password: admin (change this immediately!)',
+                'Password: superadmin123 (change this immediately!)',
                 'Click "Login" button',
                 'You\'ll be directed to the Admin Dashboard',
                 'Go to Settings → Change Password',
@@ -381,6 +393,11 @@ export default function SetupPage() {
                 'Confirm the new password and save',
             ],
             subsections: [
+                {
+                    title: 'Default Credentials Summary',
+                    content:
+                        'App Password: admin123 | Admin Username: admin | Admin Password: superadmin123 (Change all passwords immediately after first login for security)',
+                },
                 {
                     title: 'Creating Additional Users',
                     content:
@@ -586,6 +603,28 @@ export default function SetupPage() {
                         </ul>
                     </div>
 
+                    <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-6 hover-lift interactive-card animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
+                        <h3 className="text-lg font-semibold text-red-900 dark:text-red-100 mb-3 flex items-center gap-2">
+                            <Lock className="w-5 h-5" />
+                            Default Credentials
+                        </h3>
+                        <div className="space-y-3 text-red-800 dark:text-red-200 text-sm">
+                            <div className="bg-white dark:bg-red-950 p-3 rounded-lg border border-red-300 dark:border-red-700">
+                                <p className="font-semibold">App Password:</p>
+                                <p className="font-mono text-base">admin123</p>
+                            </div>
+                            <div className="bg-white dark:bg-red-950 p-3 rounded-lg border border-red-300 dark:border-red-700">
+                                <p className="font-semibold">Admin Username:</p>
+                                <p className="font-mono text-base">admin</p>
+                            </div>
+                            <div className="bg-white dark:bg-red-950 p-3 rounded-lg border border-red-300 dark:border-red-700">
+                                <p className="font-semibold">Admin Password:</p>
+                                <p className="font-mono text-base">superadmin123</p>
+                            </div>
+                            <p className="text-xs font-bold text-red-700 dark:text-red-300 mt-2">⚠️ Change all passwords immediately after first login!</p>
+                        </div>
+                    </div>
+
                     <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-xl p-6 hover-lift interactive-card animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
                         <h3 className="text-lg font-semibold text-purple-900 dark:text-purple-100 mb-3 flex items-center gap-2">
                             <AlertCircle className="w-5 h-5" />
@@ -611,9 +650,10 @@ export default function SetupPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
                                 onClick={() => {
+                                    const installer = getDownloadLink('installer');
                                     const link = document.createElement('a');
-                                    link.href = '/VitalBlink_Setup.exe';
-                                    link.download = 'VitalBlink_Setup.exe';
+                                    link.href = installer.url;
+                                    link.download = (installer as any).fileName || 'download';
                                     document.body.appendChild(link);
                                     link.click();
                                     document.body.removeChild(link);

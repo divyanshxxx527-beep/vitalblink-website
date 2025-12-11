@@ -1,9 +1,70 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, Heart, Activity, Eye, Calculator, Shield, Zap, Download, Star, Globe } from 'lucide-react';
+import { CheckCircle, Heart, Activity, Eye, Calculator, Shield, Zap, Download, Star, Globe, Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { getDownloadLink } from '@/lib/config';
 
 export default function VitalSpherePage() {
+    const vitalsphereDownload = getDownloadLink('vitalsphere');
+    
     return (
+        <>
+            {/* Header */}
+            <header className="border-b border-gray-200/30 bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg glass-effect-ultra">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
+                    <Link href="/" className="flex items-center gap-3 group magnetic-hover">
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-indigo-500 to-blue-600 shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 animate-glow-pulse">
+                            <Image
+                                src="/default_logo.png"
+                                alt="VitalBlink Logo"
+                                fill
+                                className="object-contain p-2"
+                                priority
+                            />
+                        </div>
+                        <span className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors duration-300 hover-lift">Vital<span className="text-indigo-600 group-hover:text-indigo-700 text-gradient-animated">Blink</span></span>
+                    </Link>
+                    <nav className="hidden md:flex items-center space-x-6">
+                        <Link href="/features" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Features
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/departments" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Departments
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/documentation" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Documentation
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/setup" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Setup Guide
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Pricing
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/support" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Support
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            Blog
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Link href="/vitalsphere" className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover">
+                            VitalSphere Browser
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up"></span>
+                        </Link>
+                        <Button asChild className="rounded-full bg-indigo-600 hover:bg-indigo-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-indigo-500/50">
+                            <Link href="/pricing">Get Started</Link>
+                        </Button>
+                    </nav>
+                </div>
+            </header>
+
+            {/* Main Content */}
         <main>
             {/* Hero Section */}
             <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
@@ -13,29 +74,28 @@ export default function VitalSpherePage() {
                         <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
                             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full mb-6">
                                 <Heart className="h-4 w-4 mr-2" />
-                                <span className="text-sm font-semibold">Advanced Healthcare Browser</span>
+                                <span className="text-sm font-semibold">Clinical Browser</span>
                             </div>
                             <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl leading-tight">
                                 VitalSphere
-                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mt-2">Complete Medical Suite</span>
+                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mt-2">Medical Browser & Toolkit</span>
                             </h1>
                             <p className="mt-6 text-lg text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
-                                A powerful cross-platform desktop application combining a custom medical browser, advanced medical imaging (DICOM),
-                                ECG analysis, and 85+ specialized medical calculators in one unified platform. Built with Electron for
-                                Windows, macOS, and Linux.
+                                Cross-platform desktop app combining a medical browser, DICOM imaging, and 85+ medical calculators. Built with Electron for Windows, macOS, and Linux.
                             </p>
                             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <a
-                                        href="/VitalSphere-Setup.exe"
-                                        download="VitalSphere-Setup.exe"
+                                        href={vitalsphereDownload.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
                                     >
                                         <Download className="w-5 h-5 mr-2" />
                                         Download VitalSphere
                                     </a>
                                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                                        Version 1.0.0 • 250MB • Windows, macOS, Linux
+                                        Version {vitalsphereDownload.version} • {(vitalsphereDownload as any).fileSize || 'N/A'} • Windows
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +110,7 @@ export default function VitalSpherePage() {
                                 </span>
                                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-medium border border-purple-200">
                                     <CheckCircle className="h-4 w-4 mr-2" />
-                                    85+ Medical Tools
+                                    Privacy Focused
                                 </span>
                             </div>
                         </div>
@@ -89,14 +149,14 @@ export default function VitalSpherePage() {
             <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-gray-100/50"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+                    <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-8">
                         <div className="group cursor-pointer bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 hover:shadow-2xl hover:scale-105 hover:border-blue-400 transition-all duration-300">
                             <div className="text-center">
                                 <div className="relative inline-block mb-3">
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                                    <div className="relative text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-indigo-700 group-hover:scale-110 transition-transform duration-300">85+</div>
+                                    <Shield className="relative w-16 h-16 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />
                                 </div>
-                                <div className="text-xs md:text-sm text-gray-700 font-bold uppercase tracking-wider">Medical Tools</div>
+                                <div className="text-xs md:text-sm text-gray-700 font-bold uppercase tracking-wider">HIPAA Compliant</div>
                             </div>
                         </div>
                         <div className="group cursor-pointer bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-200 rounded-2xl p-6 hover:shadow-2xl hover:scale-105 hover:border-purple-400 transition-all duration-300">
@@ -106,15 +166,6 @@ export default function VitalSpherePage() {
                                     <div className="relative text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-violet-700 group-hover:scale-110 transition-transform duration-300">DICOM</div>
                                 </div>
                                 <div className="text-xs md:text-sm text-gray-700 font-bold uppercase tracking-wider">Imaging Support</div>
-                            </div>
-                        </div>
-                        <div className="group cursor-pointer bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-6 hover:shadow-2xl hover:scale-105 hover:border-green-400 transition-all duration-300">
-                            <div className="text-center">
-                                <div className="relative inline-block mb-3">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                                    <div className="relative text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-green-600 to-emerald-700 group-hover:scale-110 transition-transform duration-300">ECG</div>
-                                </div>
-                                <div className="text-xs md:text-sm text-gray-700 font-bold uppercase tracking-wider">Analysis Suite</div>
                             </div>
                         </div>
                         <div className="group cursor-pointer bg-gradient-to-br from-red-50 to-rose-50 border-2 border-red-200 rounded-2xl p-6 hover:shadow-2xl hover:scale-105 hover:border-red-400 transition-all duration-300">
@@ -168,27 +219,15 @@ export default function VitalSpherePage() {
                             </p>
                         </div>
 
-                        <div className="group bg-gradient-to-br from-red-50 to-rose-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-lg border-2 border-red-100 dark:border-gray-700 hover:border-red-300 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                            <div className="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Heart className="w-6 h-6 text-red-600 dark:text-red-400" />
-                            </div>
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                                ECG Analysis
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Professional ECG viewer supporting multiple formats with waveform analysis tools.
-                            </p>
-                        </div>
-
                         <div className="group bg-gradient-to-br from-purple-50 to-violet-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-lg border-2 border-purple-100 dark:border-gray-700 hover:border-purple-300 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                             <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Calculator className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                                <Shield className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                             </div>
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                                85+ Medical Tools
+                                Privacy & Security
                             </h3>
                             <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Comprehensive calculators for dosing, scores, diagnostics, and clinical decision support.
+                                Incognito mode, auto-lock, panic mode (F9), and HIPAA-compliant offline operation.
                             </p>
                         </div>
                     </div>
@@ -312,127 +351,59 @@ export default function VitalSpherePage() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* ECG Analysis */}
+                        {/* Privacy & Security */}
                         <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                             <div className="flex items-center mb-6">
-                                <Heart className="w-8 h-8 text-red-600 dark:text-red-400 mr-4" />
+                                <Shield className="w-8 h-8 text-purple-600 dark:text-purple-400 mr-4" />
                                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                                    ECG Analysis Suite
+                                    Privacy & Security Features
                                 </h2>
                             </div>
                             <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
-                                Professional ECG viewer supporting multiple formats with advanced waveform analysis and interpretation tools.
+                                Built with healthcare privacy in mind, featuring HIPAA-compliant offline operation and advanced security controls.
                             </p>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Multi-Format Support</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Support for various ECG file formats and data sources</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">Incognito Mode</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Private browsing with no history tracking (Ctrl+Shift+N)</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Waveform Display</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">High-resolution ECG waveform visualization with zoom and pan controls</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">Auto-Lock Protection</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Automatic screen lock after 5 minutes of inactivity</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Lead Analysis</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Individual lead analysis with measurement tools and annotations</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">Panic Mode (F9)</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Quick emergency exit for sensitive situations</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Rhythm Analysis</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Automated rhythm detection and classification tools</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">HIPAA Mode</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Enhanced privacy settings for healthcare compliance</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Measurement Tools</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">PR interval, QRS duration, QT interval, and other cardiac measurements</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">Offline Operation</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Fully functional without external API dependencies</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 dark:text-white">Report Generation</h4>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Automated ECG interpretation reports with findings and recommendations</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white">Clear Browsing Data</h4>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">Comprehensive data clearing options in settings</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Medical Tools */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
-                            <div className="flex items-center mb-6">
-                                <Calculator className="w-8 h-8 text-purple-600 dark:text-purple-400 mr-4" />
-                                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                                    85+ Comprehensive Medical Tools
-                                </h2>
-                            </div>
-                            <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
-                                Over 85 specialized medical calculators and assessment tools for clinical decision support and patient care.
-                            </p>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div className="space-y-4">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Assessment Scores</h4>
-                                    <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                                        <li>• APGAR Score Calculator</li>
-                                        <li>• Glasgow Coma Scale (GCS)</li>
-                                        <li>• NIH Stroke Scale (NIHSS)</li>
-                                        <li>• MELD Score</li>
-                                        <li>• Child-Pugh Score</li>
-                                        <li>• SOFA Score</li>
-                                        <li>• APACHE II Score</li>
-                                        <li>• MEWS & NEWS Score</li>
-                                    </ul>
-                                </div>
-                                <div className="space-y-4">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Cardiology Tools</h4>
-                                    <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                                        <li>• CHA2DS2-VASc Score</li>
-                                        <li>• HAS-BLED Score</li>
-                                        <li>• TIMI Risk Score</li>
-                                        <li>• GRACE Score</li>
-                                        <li>• HEART Score</li>
-                                        <li>• QTc Calculator</li>
-                                        <li>• MAP Calculator</li>
-                                        <li>• Framingham Risk Score</li>
-                                    </ul>
-                                </div>
-                                <div className="space-y-4">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Nephrology & Metabolic</h4>
-                                    <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                                        <li>• Renal Function (GFR)</li>
-                                        <li>• FENa Calculator</li>
-                                        <li>• Anion Gap</li>
-                                        <li>• ABG Analyzer</li>
-                                        <li>• Corrected Sodium/Calcium</li>
-                                        <li>• Electrolyte Deficits</li>
-                                        <li>• DKA Calculator</li>
-                                        <li>• Insulin Calculator</li>
-                                    </ul>
-                                </div>
-                                <div className="space-y-4">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Pediatrics & General</h4>
-                                    <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                                        <li>• Pediatric Dosing</li>
-                                        <li>• Growth Percentile</li>
-                                        <li>• BMI/BMR/BSA Calculators</li>
-                                        <li>• Wells DVT/PE Score</li>
-                                        <li>• CURB-65 Score</li>
-                                        <li>• Ottawa Rules</li>
-                                        <li>• Burn Calculator</li>
-                                        <li>• And 60+ more tools</li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -455,10 +426,6 @@ export default function VitalSpherePage() {
                             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
                                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Medical Imaging</h3>
                                 <p className="text-gray-600 dark:text-gray-300">Cornerstone.js DICOM viewer</p>
-                            </div>
-                            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">ECG Analysis</h3>
-                                <p className="text-gray-600 dark:text-gray-300">Chart.js waveform visualization</p>
                             </div>
                             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow">
                                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Runtime</h3>
@@ -541,12 +508,13 @@ export default function VitalSpherePage() {
                         </h2>
                         <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
                             Join healthcare professionals worldwide who trust VitalSphere for custom medical browsing, medical imaging,
-                            ECG analysis, and comprehensive clinical tools. Download today and experience the difference.
+                            and comprehensive clinical tools. Download today and experience the difference.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="/VitalSphere-Setup.exe"
-                                download="VitalSphere-Setup.exe"
+                                href={vitalsphereDownload.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
                             >
                                 <Download className="w-5 h-5 mr-2" />
@@ -563,5 +531,6 @@ export default function VitalSpherePage() {
                 </div>
             </section>
         </main>
+        </>
     );
 }

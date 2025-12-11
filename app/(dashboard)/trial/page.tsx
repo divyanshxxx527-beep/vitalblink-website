@@ -1,8 +1,11 @@
 import { Download, CheckCircle, Clock, Shield, Zap, Heart, Gift, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { getDownloadLink } from '@/lib/config';
 
 export default function TrialPage() {
+    const installerDownload = getDownloadLink('installer');
+    
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-in fade-in duration-500">
             {/* Hero Section */}
@@ -15,8 +18,7 @@ export default function TrialPage() {
                     Try VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Free for 30 Days</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                    Experience the complete hospital management system with all features unlocked.
-                    No credit card required. No limitations. Full access to all departments.
+                    Full 30-day trial — access all features and departments. No credit card.
                 </p>
             </div>
 
@@ -36,24 +38,25 @@ export default function TrialPage() {
 
                         <h2 className="text-4xl font-bold text-center mb-4 animate-text-shimmer">30-Day Free Trial</h2>
                         <p className="text-xl text-indigo-100 text-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                            Full access to VitalBlink Pro with all 26+ departments
+                            Full access to all features and departments
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All 26+ Medical Departments" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All departments" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Unlimited Users & Patients" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Full Feature Access" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All features" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="AI-Powered Tools" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Complete EHR System" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Advanced Billing & Inventory" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No Credit Card Required" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No credit card" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No Feature Limitations" />
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                             <a
-                                href="/VitalBlink_Setup.exe"
-                                download="VitalBlink_Setup.exe"
+                                href={installerDownload.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex-1 sm:flex-none"
                             >
                                 <Button
@@ -87,19 +90,19 @@ export default function TrialPage() {
                     <IncludedCard
                         icon={<Heart className="h-8 w-8" />}
                         title="Complete Hospital System"
-                        description="Access all 26+ medical departments including Cardiology, Emergency, Surgery, Radiology, and more with department-specific tools."
+                        description="Access all departments and their specialty tools."
                         color="from-rose-500 to-pink-600"
                     />
                     <IncludedCard
                         icon={<Shield className="h-8 w-8" />}
                         title="Advanced Security"
-                        description="Role-based access control, audit logging, secure data storage, and medical image encryption for complete HIPAA compliance."
+                        description="Secure, role-based access with encrypted storage."
                         color="from-emerald-500 to-green-600"
                     />
                     <IncludedCard
                         icon={<Zap className="h-8 w-8" />}
                         title="Full Features"
-                        description="Patient management, billing, inventory, blood bank, pharmacy, appointment scheduling, and queue management system."
+                        description="Patient records, billing, inventory, and scheduling tools."
                         color="from-indigo-500 to-purple-600"
                     />
                 </div>
@@ -158,7 +161,7 @@ export default function TrialPage() {
                 <div className="space-y-6">
                     <FAQItem
                         question="Do I need a credit card to start the trial?"
-                        answer="No! The trial is completely free with no credit card required. Simply download and start using VitalBlink immediately."
+                        answer="No — the trial is free; no credit card required."
                     />
                     <FAQItem
                         question="What happens after 30 days?"
@@ -166,7 +169,7 @@ export default function TrialPage() {
                     />
                     <FAQItem
                         question="Are there any limitations during the trial?"
-                        answer="No limitations! You get full access to all 26+ departments, unlimited users, and all features including AI tools and advanced reporting."
+                        answer="No — the trial includes all features and departments, plus AI tools and reporting."
                     />
                     <FAQItem
                         question="Can I convert my trial to a paid license?"
@@ -192,8 +195,9 @@ export default function TrialPage() {
                     Start your 30-day free trial today and discover why healthcare facilities trust VitalBlink
                 </p>
                 <a
-                    href="/VitalBlink_Setup.exe"
-                    download="VitalBlink_Setup.exe"
+                    href={installerDownload.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <Button
                         size="lg"
@@ -204,7 +208,7 @@ export default function TrialPage() {
                     </Button>
                 </a>
                 <p className="text-sm text-gray-500 mt-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                    No credit card required • Full feature access • 30-day trial period
+                    No credit card • All features • 30-day trial
                 </p>
             </div>
         </main>

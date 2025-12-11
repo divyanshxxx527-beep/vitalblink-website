@@ -53,8 +53,7 @@ export default function ScreenshotsPage() {
                         VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Screenshots</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Explore the intuitive interface and powerful features of VitalBlink Hospital Management System.
-                        <span className="block mt-2 text-indigo-600 font-semibold">Click any screenshot to view in fullscreen</span>
+                        Explore the interface and key features of VitalBlink. <span className="block mt-2 text-indigo-600 font-semibold">Click a screenshot to view fullscreen</span>
                     </p>
                 </div>
 
@@ -83,7 +82,7 @@ export default function ScreenshotsPage() {
                         System <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Screenshots</span>
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        Real screenshots from the production system showing actual features and capabilities
+                        Real screenshots showcasing the user interface and features.
                     </p>
                 </div>
 
@@ -108,7 +107,7 @@ export default function ScreenshotsPage() {
                     {/* Master Dashboard */}
                     <ScreenshotSection
                         title="Master Dashboard & Analytics"
-                        description="Comprehensive master dashboard providing hospital-wide overview with real-time metrics, patient statistics, department performance, and administrative controls."
+                        description="Master dashboard with live metrics, patient stats, and admin controls."
                         icon={<BarChart3 className="h-8 w-8" />}
                         features={[
                             'Hospital-wide analytics',
@@ -125,7 +124,7 @@ export default function ScreenshotsPage() {
                     {/* Dashboard */}
                     <ScreenshotSection
                         title="Department Dashboard"
-                        description="Real-time departmental operations dashboard with key metrics, patient statistics, appointments, and quick access to critical functions."
+                        description="Department dashboard with live metrics, appointments, and quick actions."
                         icon={<Activity className="h-8 w-8" />}
                         features={[
                             'Live patient statistics',
@@ -142,7 +141,7 @@ export default function ScreenshotsPage() {
                     {/* Patient Management */}
                     <ScreenshotSection
                         title="Patient Management System"
-                        description="Comprehensive patient record system with registration, medical history, appointments, prescriptions, and complete treatment documentation."
+                        description="Patient records, appointments, prescriptions, and treatment history."
                         icon={<Users className="h-8 w-8" />}
                         features={[
                             'Patient registration',
@@ -490,7 +489,7 @@ export default function ScreenshotsPage() {
                         </h2>
                         <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto leading-relaxed">
                             Transform your healthcare facility with comprehensive hospital management.
-                            <span className="block mt-2 font-semibold">One-time payment. Lifetime access.</span>
+                            <span className="block mt-2 font-semibold">One-time purchase — lifetime access.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/pricing">

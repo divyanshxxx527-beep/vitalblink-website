@@ -12,14 +12,13 @@ export default function FeaturesPage() {
             {/* Header */}
             <div className="text-center mb-16">
                 <span className="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
-                    Full Feature Set
+                    All Features
                 </span>
                 <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up animation-delay-200">
-                    Complete Hospital Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Features</span>
+                    Hospital Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Features</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Everything you need to run a modern healthcare facility efficiently and securely.
-                    <strong className="text-indigo-600"> Runs locally</strong> with no internet required.
+                    Tools to manage hospital operations — secure and easy to use.
                 </p>
             </div>
 
@@ -33,14 +32,14 @@ export default function FeaturesPage() {
                         Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Features</span>
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-400">
-                        Powerful tools to manage every aspect of your healthcare facility
+                        Practical features for clinical and administrative workflows
                     </p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <FeatureCard
                         icon={<Users className="h-8 w-8" />}
-                        title="Complete Patient Management"
-                        description="Full electronic health records (EHR) system with patient registration, medical history, appointment scheduling, and secure data management."
+                        title="Patient Management"
+                        description="EHR with patient records, scheduling, and secure storage."
                         features={[
                             'Patient registration & profiles',
                             'Medical history tracking',
@@ -54,11 +53,11 @@ export default function FeaturesPage() {
                     <FeatureCard
                         icon={<Shield className="h-8 w-8" />}
                         title="Security & Compliance"
-                        description="Comprehensive security with role-based access control and audit logging for healthcare compliance."
+                        description="Role-based access, audit logging, and secure medical storage."
                         features={[
                             'Secure medical data storage',
                             'Role-based access control (RBAC)',
-                            'Complete audit logging',
+                            'Audit logging',
                             'Session management',
                             'Data backup & recovery',
                             'Healthcare compliance support'
@@ -68,7 +67,7 @@ export default function FeaturesPage() {
                     <FeatureCard
                         icon={<FileText className="h-8 w-8" />}
                         title="Billing & Invoicing"
-                        description="Automated billing system with insurance claims, payment tracking, and comprehensive financial reporting."
+                        description="Automated billing with insurance claims, payments, and reporting."
                         features={[
                             'Automated invoice generation',
                             'Insurance claims processing',
@@ -82,7 +81,7 @@ export default function FeaturesPage() {
                     <FeatureCard
                         icon={<Database className="h-8 w-8" />}
                         title="Inventory Management"
-                        description="Complete inventory control for medical supplies, pharmacy, equipment, and hospital assets."
+                        description="Inventory control for supplies, pharmacy, and equipment."
                         features={[
                             'Medical supplies tracking',
                             'Pharmacy inventory',
@@ -96,7 +95,7 @@ export default function FeaturesPage() {
                     <FeatureCard
                         icon={<Activity className="h-8 w-8" />}
                         title="Medical Tools"
-                        description="Comprehensive tools to assist doctors with medical imaging, clinical support, and documentation."
+                        description="Tools for imaging, ECG, and clinical support."
                         features={[
                             'Medical imaging viewer',
                             'ECG and diagnostic analysis',
@@ -110,7 +109,7 @@ export default function FeaturesPage() {
                     <FeatureCard
                         icon={<BarChart3 className="h-8 w-8" />}
                         title="Analytics & Reporting"
-                        description="Real-time dashboards and comprehensive reporting tools for data-driven decision making."
+                        description="Dashboards and reports for data-driven decisions."
                         features={[
                             'Real-time dashboard',
                             'Custom report generation',
@@ -129,14 +128,13 @@ export default function FeaturesPage() {
                 <div className="p-10 md:p-12">
                     <div className="text-center mb-10">
                         <span className="inline-block px-5 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-xs font-bold uppercase tracking-wide mb-4 animate-fade-in-up magnetic-hover">
-                            🏥 Complete Coverage
+                            🏥 26+ Departments
                         </span>
                         <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">26+</span> Medical Departments
                         </h2>
                         <p className="text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                            VitalBlink supports comprehensive management for all major medical specialties with
-                            department-specific workflows, forms, and reporting systems.
+                            Support for major specialties with department-specific workflows and reporting.
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -174,13 +172,13 @@ export default function FeaturesPage() {
                         Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Hospital Services</span>
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                        Complete service management beyond medical departments
+                        Service management for non-clinical hospital operations.
                     </p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                     <ServiceCard
                         title="Blood Bank Management"
-                        description="Complete blood bank operations with donor registration, blood type tracking, inventory management, and transfusion records."
+                        description="Blood bank operations with donor registration, tracking, and transfusion records."
                         features={[
                             'Donor registration & tracking',
                             'Blood type inventory',
@@ -359,7 +357,7 @@ export default function FeaturesPage() {
                                 Role-Based Access Control & <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Authentication</span>
                             </h3>
                             <p className="text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                                VitalBlink features comprehensive user management with role-based access control.
+                                VitalBlink includes user management with role-based access control.
                                 Each user role has specific permissions and access levels to ensure secure operations.
                             </p>
                         </div>
@@ -409,7 +407,7 @@ export default function FeaturesPage() {
                                 </div>
                                 <div className="flex items-start">
                                     <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                                    <span>Complete login/logout audit trail</span>
+                                    <span>Login/logout audit trail</span>
                                 </div>
                                 <div className="flex items-start">
                                     <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -433,11 +431,10 @@ export default function FeaturesPage() {
                                 🏠 Offline First
                             </span>
                             <h3 className="text-3xl font-bold text-gray-900 mb-3 animate-fade-in-up animation-delay-200">
-                                Localhost Deployment - <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">No Internet Required</span>
+                                Local deployment — <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">No internet required</span>
                             </h3>
                             <p className="text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                                VitalBlink runs entirely on your hospital's local server. No internet connection needed,
-                                ensuring complete data privacy and control.
+                                Runs entirely on your hospital's local server—keeps patient data on-premise with no cloud dependency.
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
@@ -467,7 +464,7 @@ export default function FeaturesPage() {
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                                        <span>Complete control over infrastructure</span>
+                                        <span>Full control over infrastructure</span>
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -517,7 +514,7 @@ export default function FeaturesPage() {
                             'Runs on your local server',
                             'No internet required',
                             'Your data stays with you',
-                            'Complete control',
+                            'Full control',
                             'Data privacy',
                             'Optimized performance'
                         ]}
@@ -618,7 +615,7 @@ export default function FeaturesPage() {
                         icon={<TrendingUp />}
                         title="Master Reports"
                         points={[
-                            'Comprehensive analytics',
+                            'Analytics',
                             'Custom report builder',
                             'PDF/Excel exports',
                             'Financial reports',
@@ -644,7 +641,7 @@ export default function FeaturesPage() {
                         icon={<Shield />}
                         title="Audit & Backup"
                         points={[
-                            'Complete audit logging',
+                            'Audit logging',
                             'Activity tracking',
                             'Automated backups',
                             'Backup management system',
@@ -659,11 +656,10 @@ export default function FeaturesPage() {
             <section className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-cyan-600 rounded-3xl p-12 text-center text-white shadow-2xl">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-4">
-                        Ready to Transform Your Healthcare Facility?
+                        Ready to streamline your facility?
                     </h2>
                     <p className="text-xl text-indigo-100 mb-8 leading-relaxed">
-                        Get started with VitalBlink's comprehensive management system.
-                        One-time purchase, lifetime updates, no subscription fees.
+                        Get started with VitalBlink — One-time purchase — lifetime updates included.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="/pricing" className="w-full sm:w-auto bg-white text-indigo-600 hover:bg-gray-100 hover:scale-105 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl text-center inline-flex items-center justify-center gap-2 ripple-effect interactive-card">

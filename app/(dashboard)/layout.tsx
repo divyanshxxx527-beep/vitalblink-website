@@ -57,6 +57,13 @@ function Navigation() {
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up animation-delay-500"></span>
         </Link>
         <Link
+          href="/blog"
+          className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover"
+        >
+          Blog
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up animation-delay-550"></span>
+        </Link>
+        <Link
           href="/vitalsphere"
           className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover"
         >
@@ -78,7 +85,7 @@ function Navigation() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-gray-200/30 shadow-lg animate-in slide-in-from-top duration-300 glass-effect-ultra">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-gray-200/30 shadow-lg animate-in slide-in-from-top duration-300 glass-effect-ultra z-60">
           <nav className="flex flex-col px-4 py-4 space-y-4">
             <Link
               href="/features"
@@ -121,6 +128,13 @@ function Navigation() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Support
+            </Link>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-gray-700 hover:text-indigo-600 hover:translate-x-2 transition-all duration-300 animate-slide-in-up animation-delay-550"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="/vitalsphere"
@@ -258,8 +272,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 </li>
                 <li>
-                  <a href="https://github.com/your-repo/vitalblink" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                    GitHub
+                  <a href="https://x.com/vitalblink" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/channel/UCfFuZTlKNywVmA1v8GzuP4Q" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
+                    YouTube
                   </a>
                 </li>
               </ul>
