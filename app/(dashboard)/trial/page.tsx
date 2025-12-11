@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { getDownloadLink } from '@/lib/config';
 
 export default function TrialPage() {
-    const installerDownload = getDownloadLink('installer');
+    const trialDownload = getDownloadLink('vitalblink_trial');
     
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-in fade-in duration-500">
@@ -54,7 +54,7 @@ export default function TrialPage() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                             <a
-                                href={installerDownload.url}
+                                href={trialDownload.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 sm:flex-none"
@@ -195,7 +195,7 @@ export default function TrialPage() {
                     Start your 30-day free trial today and discover why healthcare facilities trust VitalBlink
                 </p>
                 <a
-                    href={installerDownload.url}
+                    href={trialDownload.url}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
