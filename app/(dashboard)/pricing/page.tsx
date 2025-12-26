@@ -14,21 +14,21 @@ export default async function PricingPage() {
           <div className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 rounded-2xl p-6 text-white text-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-emerald-400 hover-lift interactive-card animate-fade-in-up">
             <div className="flex items-center justify-center gap-3 mb-2">
               <Gift className="h-8 w-8 animate-pulse" />
-              <h3 className="text-2xl font-bold">30-Day Free Trial Available!</h3>
+              <h3 className="text-3xl font-black">30-Day FREE Trial</h3>
             </div>
-            <p className="text-lg text-emerald-50">
-              Try VitalBlink Pro with all features unlocked. No credit card.
+            <p className="text-xl text-emerald-50 font-semibold">
+              Full Access • No Credit Card • Zero Risk
             </p>
           </div>
         </Link>
       </div>
 
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-          Choose Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Edition</span>
+        <h1 className="text-5xl font-black text-gray-900 mb-4 animate-fade-in-up">
+          <span className="text-gray-900">Simple Pricing.</span> <span className="text-indigo-600">Massive Value</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-          One-time purchase — lifetime updates included.
+        <p className="text-2xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200 font-semibold">
+          Pay once. Own forever. No subscriptions.
         </p>
       </div>
 
@@ -102,7 +102,7 @@ export default async function PricingPage() {
           description={editions.plus.description}
           imagePath="/edition/vitalblink plus.png"
           features={[
-            'Choose 5 Medical Departments',
+            'Choose 3 Medical Departments',
             'Unlimited Users & Patients',
             'Complete Patient Records (EHR)',
             'Appointment Scheduling',
@@ -188,41 +188,41 @@ export default async function PricingPage() {
 
       {/* FAQ Section */}
       <div className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-8 animate-fade-in-up">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Questions</span>
+        <h2 className="text-5xl font-black text-gray-900 text-center mb-8 animate-fade-in-up">
+          Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Questions</span>
         </h2>
         <div className="space-y-6">
           <FAQItem
             question="Is this a one-time payment or subscription?"
-            answer="One-time purchase with lifetime updates."
+            answer="One payment. Own forever. Zero subscriptions."
           />
           <FAQItem
             question="Do I get lifetime updates?"
-            answer="Yes! All purchases include lifetime software updates at no additional cost."
+            answer="Yes. Every update. Forever. Free."
           />
           <FAQItem
-            question="What's the difference between Clinic, Plus, and Pro editions?"
-            answer="Clinic edition includes 1 department of your choice. Plus edition includes 5 departments. Pro edition includes all 26+ departments plus advanced features like AI tools and API access."
+            question="What's the difference between editions?"
+            answer="Clinic: 1 department. Plus: 3 departments. Pro: All 26+ departments."
           />
           <FAQItem
-            question="Can I upgrade from Clinic or Plus to Pro later?"
-            answer="Yes! Contact our support team and we'll provide you with an upgrade discount based on your previous purchase."
+            question="Can I upgrade later?"
+            answer="Absolutely. Get upgrade credit for your previous purchase."
           />
           <FAQItem
             question="Which departments can I choose in Plus edition?"
-            answer="With VitalBlink Plus, you can choose any 5 departments from our 26+ available departments including Cardiology, Emergency, Surgery, Radiology, Pediatrics, and more."
+            answer="Choose any 3 departments from 26+ available specialties."
           />
           <FAQItem
             question="How many users can I have?"
-            answer="All editions support unlimited users, departments, and patients. No restrictions on user count."
+            answer="Unlimited. Users, patients, records. No caps."
           />
           <FAQItem
-            question="What about technical support?"
-            answer="All purchases include technical support via email. VitalBlink Pro customers get priority support."
+            question="What about support?"
+            answer="Email support included. Pro gets priority access."
           />
           <FAQItem
-            question="Can I use this for multiple locations?"
-            answer="VitalBlink Pro license is per facility. Contact us for multi-location pricing."
+            question="Multi-location pricing?"
+            answer="One license per facility. Contact us for volume deals."
           />
         </div>
       </div>

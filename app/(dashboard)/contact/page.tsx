@@ -11,11 +11,11 @@ export default function ContactPage() {
                     <MessageSquare className="h-5 w-5 mr-2" />
                     <span className="text-sm font-bold">We're Here to Help</span>
                 </div>
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                    Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 animate-text-shimmer">Touch</span>
+                <h1 className="text-6xl font-black text-gray-900 mb-4 animate-fade-in-up">
+                    <span className="text-gray-900">Let's</span> <span className="text-cyan-600">Talk</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                    Have questions? Our team is ready to assist you with sales inquiries, technical support, or general questions
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up font-semibold" style={{ animationDelay: '0.2s' }}>
+                    Sales. Support. Questions. We're here.
                 </p>
             </div>
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
                             icon={<Mail className="h-6 w-6 text-blue-600" />}
                             label="Email Addresses"
                             lines={[
-                                { text: 'vitalblink.services@gmail.com', subtext: 'Sales, Support & General Inquiries', bold: true }
+                                { text: 'contact@vitalblink.store', subtext: 'Sales, Support & General Inquiries', bold: true }
                             ]}
                         />
 
@@ -297,7 +297,7 @@ export default function ContactPage() {
                             Contact Enterprise Sales
                         </Button>
                         <p className="text-blue-100 mt-4 text-sm">
-                            Or email us directly at <a href="mailto:enterprise@vitalblink.com" className="underline font-bold">enterprise@vitalblink.com</a>
+                            Or email us directly at <a href="mailto:contact@vitalblink.store" className="underline font-bold">contact@vitalblink.store</a>
                         </p>
                     </div>
                 </div>

@@ -11,10 +11,8 @@ const InstallationSVG = () => (
             <style>{`
         @keyframes download { 0% { transform: translateY(-30px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(0); opacity: 1; } }
         @keyframes install { 0% { width: 0%; } 100% { width: 100%; } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         .download-box { animation: download 2s ease-in-out infinite; }
         .progress-bar { animation: install 3s ease-in-out infinite; }
-        .pulse-elem { animation: pulse 1.5s ease-in-out infinite; }
       `}</style>
         </defs>
 

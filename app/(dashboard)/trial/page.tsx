@@ -12,13 +12,13 @@ export default function TrialPage() {
             <div className="text-center mb-12">
                 <div className="inline-flex items-center bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 px-6 py-3 rounded-full mb-6 border-2 border-emerald-300 shadow-lg animate-fade-in-up magnetic-hover">
                     <Gift className="h-6 w-6 mr-2 animate-pulse" />
-                    <span className="text-lg font-bold">30-Day Free Trial Available</span>
+                    <span className="text-lg font-bold">Zero Risk • Full Power • 30 Days</span>
                 </div>
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                    Try VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Free for 30 Days</span>
+                <h1 className="text-6xl font-black mb-6 animate-fade-in-up leading-tight">
+                    <span className="text-gray-900">Try Everything.</span> <span className="text-emerald-600">Pay Nothing.</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                    Full 30-day trial — access all features and departments. No credit card.
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up font-semibold" style={{ animationDelay: '0.2s' }}>
+                    30 days • All features • No credit card • No limits
                 </p>
             </div>
 
@@ -36,20 +36,20 @@ export default function TrialPage() {
                             </div>
                         </div>
 
-                        <h2 className="text-4xl font-bold text-center mb-4 animate-text-shimmer">30-Day Free Trial</h2>
-                        <p className="text-xl text-indigo-100 text-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                            Full access to all features and departments
+                        <h2 className="text-5xl font-black text-center mb-4">Full Hospital System</h2>
+                        <p className="text-2xl text-indigo-100 text-center mb-8 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                            26+ Departments • AI Tools • Zero Restrictions
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All departments" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Unlimited Users & Patients" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All features" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="All 26+ Departments" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Unlimited Users" />
                             <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="AI-Powered Tools" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Complete EHR System" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Advanced Billing & Inventory" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No credit card" />
-                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No Feature Limitations" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Complete EHR" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Smart Billing" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Full Inventory" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="No Credit Card" />
+                            <TrialFeature icon={<CheckCircle className="h-6 w-6" />} text="Zero Limitations" />
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
@@ -64,18 +64,9 @@ export default function TrialPage() {
                                     className="w-full sm:w-auto text-xl bg-white text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 rounded-full py-8 px-10 font-bold group ripple-effect interactive-card"
                                 >
                                     <Download className="mr-3 h-7 w-7 group-hover:animate-bounce" />
-                                    Download Free Trial
+                                    Get Started Free
                                 </Button>
                             </a>
-                            <Link href="/pricing" className="flex-1 sm:flex-none">
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="w-full sm:w-auto text-xl border-3 border-white text-white bg-transparent hover:bg-white hover:text-indigo-600 rounded-full py-8 px-10 font-bold transition-all duration-300 ripple-effect interactive-card"
-                                >
-                                    View Full Pricing
-                                </Button>
-                            </Link>
                         </div>
                     </div>
                 </div>
@@ -83,26 +74,27 @@ export default function TrialPage() {
 
             {/* What's Included Section */}
             <div className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 animate-fade-in-up">
-                    What's Included in Your Trial
+                <h2 className="text-5xl font-black text-gray-900 text-center mb-4 animate-fade-in-up">
+                    Everything. <span className="text-emerald-600">Unlocked.</span>
                 </h2>
+                <p className="text-xl text-gray-600 text-center mb-10 font-medium">No restrictions. No limitations. Full power.</p>
                 <div className="grid md:grid-cols-3 gap-8">
                     <IncludedCard
                         icon={<Heart className="h-8 w-8" />}
-                        title="Complete Hospital System"
-                        description="Access all departments and their specialty tools."
+                        title="All Departments"
+                        description="26+ medical specialties. Every tool. Every feature."
                         color="from-rose-500 to-pink-600"
                     />
                     <IncludedCard
                         icon={<Shield className="h-8 w-8" />}
-                        title="Advanced Security"
-                        description="Secure, role-based access with encrypted storage."
+                        title="Enterprise Security"
+                        description="Bank-level protection. Role-based access. Total control."
                         color="from-emerald-500 to-green-600"
                     />
                     <IncludedCard
                         icon={<Zap className="h-8 w-8" />}
-                        title="Full Features"
-                        description="Patient records, billing, inventory, and scheduling tools."
+                        title="Full Suite"
+                        description="EHR, billing, inventory, AI tools. All included."
                         color="from-indigo-500 to-purple-600"
                     />
                 </div>
@@ -110,26 +102,26 @@ export default function TrialPage() {
 
             {/* How It Works */}
             <div className="max-w-4xl mx-auto mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 animate-fade-in-up">
-                    How the Trial Works
+                <h2 className="text-4xl font-black text-gray-900 text-center mb-10 animate-fade-in-up">
+                    Three Steps. <span className="text-indigo-600">Zero Risk.</span>
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                     <StepCard
                         number="1"
                         title="Download"
-                        description="Click the download button to get VitalBlink trial version"
+                        description="Click and download. Takes 2 minutes."
                         color="bg-blue-500"
                     />
                     <StepCard
                         number="2"
-                        title="Install & Setup"
-                        description="Install on your local server and configure your hospital settings"
+                        title="Install"
+                        description="Quick setup. Your server. Your data."
                         color="bg-purple-500"
                     />
                     <StepCard
                         number="3"
-                        title="Explore for 30 Days"
-                        description="Use all features with no limitations for a full month"
+                        title="Explore"
+                        description="30 days. Full access. No limits."
                         color="bg-emerald-500"
                     />
                 </div>
@@ -139,60 +131,56 @@ export default function TrialPage() {
             <div className="max-w-4xl mx-auto mb-16 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-10 animate-fade-in-up interactive-card">
                 <div className="text-center mb-8">
                     <Star className="h-12 w-12 text-amber-600 mx-auto mb-4 animate-pulse" />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 animate-text-shimmer">
-                        Why Start with a Trial?
+                    <h3 className="text-3xl font-black text-gray-900 mb-2">
+                        Why Start Free?
                     </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                    <BenefitItem text="Test all features in your actual hospital environment" />
-                    <BenefitItem text="Train your staff before making a purchase decision" />
-                    <BenefitItem text="Verify compatibility with your existing systems" />
-                    <BenefitItem text="Experience the full power of VitalBlink risk-free" />
-                    <BenefitItem text="Evaluate department-specific tools thoroughly" />
-                    <BenefitItem text="Import your data and test real workflows" />
+                    <BenefitItem text="Test with real patient data" />
+                    <BenefitItem text="Train your entire team" />
+                    <BenefitItem text="Verify system compatibility" />
+                    <BenefitItem text="Experience full power" />
+                    <BenefitItem text="Evaluate all departments" />
+                    <BenefitItem text="Import and test workflows" />
                 </div>
             </div>
 
             {/* FAQ Section */}
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 animate-fade-in-up">
-                    Trial FAQs
+                <h2 className="text-4xl font-black text-gray-900 text-center mb-10 animate-fade-in-up">
+                    Quick <span className="text-indigo-600">Answers</span>
                 </h2>
                 <div className="space-y-6">
                     <FAQItem
-                        question="Do I need a credit card to start the trial?"
-                        answer="No — the trial is free; no credit card required."
+                        question="Need a credit card?"
+                        answer="No. Completely free. Zero payment info required."
                     />
                     <FAQItem
-                        question="What happens after 30 days?"
-                        answer="After 30 days, you'll need to purchase a license to continue using VitalBlink. Your data and settings will be preserved when you activate your license."
+                        question="After 30 days?"
+                        answer="Choose to buy or stop. Your data stays safe either way."
                     />
                     <FAQItem
-                        question="Are there any limitations during the trial?"
-                        answer="No — the trial includes all features and departments, plus AI tools and reporting."
+                        question="Any limitations?"
+                        answer="None. Every feature. Every department. Full access."
                     />
                     <FAQItem
-                        question="Can I convert my trial to a paid license?"
-                        answer="Yes! When you purchase any VitalBlink edition, your trial installation will be automatically upgraded. All your data and settings are preserved."
+                        question="Convert to paid?"
+                        answer="One click. All data preserved. Instant upgrade."
                     />
                     <FAQItem
-                        question="Can I extend the trial period?"
-                        answer="The trial is limited to 30 days per installation. However, our support team can help evaluate special circumstances on a case-by-case basis."
-                    />
-                    <FAQItem
-                        question="Is my trial data secure?"
-                        answer="Absolutely! The trial version uses the same security features as the full version, including role-based access, encryption, and audit logging."
+                        question="Is it secure?"
+                        answer="Same enterprise security as the full version. Bank-level."
                     />
                 </div>
             </div>
 
             {/* CTA Section */}
             <div className="max-w-4xl mx-auto mt-16 text-center bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-3xl p-12 animate-fade-in-up interactive-card">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4 animate-text-shimmer">
-                    Ready to Experience VitalBlink?
+                <h3 className="text-5xl font-black text-gray-900 mb-4">
+                    Ready? <span className="text-indigo-600">Start Now.</span>
                 </h3>
-                <p className="text-lg text-gray-600 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                    Start your 30-day free trial today and discover why healthcare facilities trust VitalBlink
+                <p className="text-xl text-gray-600 mb-8 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    Download. Install. Explore. All in 5 minutes.
                 </p>
                 <a
                     href={trialDownload.url}
@@ -204,11 +192,11 @@ export default function TrialPage() {
                         className="text-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 rounded-full py-8 px-12 font-bold group ripple-effect interactive-card"
                     >
                         <Download className="mr-3 h-7 w-7 group-hover:animate-bounce" />
-                        Download Free Trial Now
+                        Start Free Trial
                     </Button>
                 </a>
-                <p className="text-sm text-gray-500 mt-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                    No credit card • All features • 30-day trial
+                <p className="text-sm text-gray-500 mt-4 animate-fade-in-up font-medium" style={{ animationDelay: '0.4s' }}>
+                    30 days • All features • No card • No risk
                 </p>
             </div>
         </main>

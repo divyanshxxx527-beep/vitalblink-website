@@ -12,7 +12,7 @@ export default function PrivacyPage() {
                     Your Privacy Matters
                 </span>
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                    🔒 Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 animate-text-shimmer">Policy</span>
+                    <span className="text-gray-900">🔒 Privacy</span> <span className="text-indigo-600">Policy</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     VitalBlink is committed to protecting your privacy and securing your data
@@ -260,11 +260,11 @@ export default function PrivacyPage() {
                         <ul className="space-y-3">
                             <li className="flex items-center text-gray-700">
                                 <Mail className="h-5 w-5 text-indigo-600 mr-3" />
-                                <span><strong>Email:</strong> privacy@vitalblink.com</span>
+                                <span><strong>Email:</strong> contact@vitalblink.store</span>
                             </li>
                             <li className="flex items-center text-gray-700">
                                 <Globe className="h-5 w-5 text-indigo-600 mr-3" />
-                                <span><strong>Website:</strong> www.vitalblink.com/support</span>
+                                <span><strong>Website:</strong> www.vitalblink.store/support</span>
                             </li>
                         </ul>
                     </div>

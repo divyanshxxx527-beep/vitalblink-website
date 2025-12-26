@@ -75,7 +75,7 @@ export default function BlogPage() {
                     Healthcare Insights
                 </span>
                 <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                    VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Blog</span>
+                    <span className="text-gray-900">VitalBlink</span> <span className="text-indigo-600">Blog</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     Stay informed with the latest trends in healthcare technology, management best practices, and updates from the VitalBlink team.

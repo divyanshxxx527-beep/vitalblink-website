@@ -19,11 +19,11 @@ export default function AboutPage() {
                     </div>
                     <span className="text-sm font-bold">About VitalBlink</span>
                 </div>
-                <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up animation-delay-200">
-                    One Blink, <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Full Control</span>
+                <h1 className="text-6xl font-black text-gray-900 mb-6 leading-tight animate-fade-in-up animation-delay-200">
+                    <span className="text-gray-900">Healthcare Software,</span> <span className="text-indigo-600">Reimagined</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Discover the story behind VitalBlink and our commitment to transforming healthcare management.
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-semibold">
+                    Built by a medical student. Designed for real hospitals.
                 </p>
             </div>
 
@@ -35,8 +35,8 @@ export default function AboutPage() {
                         <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wide mb-4 shadow-sm">
                             The Beginning
                         </span>
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            From Frustration to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Innovation</span>
+                        <h2 className="text-5xl font-black text-gray-900 mb-4">
+                            From Problem to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Solution</span>
                         </h2>
                     </div>
                     <div className="max-w-4xl mx-auto">
@@ -47,8 +47,8 @@ export default function AboutPage() {
                                         <div className="w-3 h-3 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                                         The Problem
                                     </h3>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        As a medical student, I saw paper records, fragmented data, and outdated software slowing care.
+                                    <p className="text-gray-700 leading-relaxed font-medium">
+                                        Outdated software. Fragmented systems. Endless paperwork.
                                     </p>
                                 </div>
                                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-green-200">
@@ -56,8 +56,8 @@ export default function AboutPage() {
                                         <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
                                         The Solution
                                     </h3>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        VitalBlink was created to fix those issues: modern, intuitive software tailored for hospitals.
+                                    <p className="text-gray-700 leading-relaxed font-medium">
+                                        Modern interface. Smart automation. One complete system.
                                     </p>
                                 </div>
                             </div>
@@ -84,9 +84,8 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="mt-8 text-center">
-                            <p className="text-lg text-gray-600 italic">
-                                "Healthcare should empower doctors and nurses to focus on patients, not paperwork.
-                                That's why we built VitalBlink - to make healthcare technology work for you."
+                            <p className="text-xl text-gray-600 italic font-semibold">
+                                "Technology should empower doctors, not bury them in paperwork."
                             </p>
                         </div>
                     </div>
@@ -97,16 +96,12 @@ export default function AboutPage() {
             <section className="mb-16 bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-2xl p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
-                        <p className="text-gray-700 mb-4">
-                            To empower healthcare facilities worldwide with a complete, secure, and affordable
-                            hospital management solution that puts patient care first while maintaining the
-                            highest standards of data security and regulatory compliance.
+                        <h2 className="text-4xl font-black text-gray-900 mb-4">Our Mission</h2>
+                        <p className="text-xl text-gray-700 mb-4 font-semibold leading-relaxed">
+                            Make world-class hospital software accessible to everyone.
                         </p>
-                        <p className="text-gray-700">
-                            VitalBlink eliminates the complexity of managing hospital operations by providing
-                            an all-in-one platform that healthcare professionals can trust - from patient
-                            registration to specialized department workflows, from billing to inventory management.
+                        <p className="text-lg text-gray-700 font-medium">
+                            One platform. Complete solution. Zero complexity.
                         </p>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -124,45 +119,45 @@ export default function AboutPage() {
                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
                         What Drives Us
                     </span>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Our Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Values</span>
+                    <h2 className="text-5xl font-black text-gray-900 mb-4">
+                        Why We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Build</span>
                     </h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     <ValueCard
                         icon={<Shield className="h-8 w-8" />}
                         title="Security First"
-                        description="Role-based access control, comprehensive audit logging, and secure data management protect sensitive medical information."
+                        description="Role-based access. Audit logs. Military-grade encryption."
                         color="red"
                     />
                     <ValueCard
                         icon={<Heart className="h-8 w-8" />}
                         title="Patient-Centric"
-                        description="Every feature designed with patient care in mind, ensuring healthcare providers can focus on what matters most."
+                        description="Every feature designed to help providers focus on patients."
                         color="rose"
                     />
                     <ValueCard
                         icon={<Zap className="h-8 w-8" />}
                         title="Innovation"
-                        description="Continuously evolving with modern technology and healthcare best practices to meet emerging needs."
+                        description="Modern tech. Best practices. Continuous evolution."
                         color="amber"
                     />
                     <ValueCard
                         icon={<Users className="h-8 w-8" />}
                         title="Accessibility"
-                        description="One-time purchase model makes enterprise healthcare software accessible to facilities of all sizes."
+                        description="Enterprise power. Small clinic pricing. One payment."
                         color="cyan"
                     />
                     <ValueCard
                         icon={<Award className="h-8 w-8" />}
                         title="Quality"
-                        description="Built with enterprise-grade technologies and rigorous testing to ensure reliability and performance."
+                        description="Enterprise-grade tech. Rigorously tested. Rock solid."
                         color="indigo"
                     />
                     <ValueCard
                         icon={<Globe className="h-8 w-8" />}
                         title="Universal"
-                        description="Designed for healthcare facilities worldwide with multi-language support and universal data sharing capabilities."
+                        description="Multi-language. Universal standards. Global reach."
                         color="emerald"
                     />
                 </div>
@@ -179,8 +174,8 @@ export default function AboutPage() {
                                 <Server className="inline h-3 w-3 mr-1" />
                                 Technology Platform
                             </span>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                                Secure & Reliable <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Platform</span>
+                            <h2 className="text-5xl font-black text-gray-900 mb-4">
+                                Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Last</span>
                             </h2>
                         </div>
 

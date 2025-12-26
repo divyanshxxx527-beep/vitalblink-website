@@ -12,7 +12,7 @@ export default function TermsPage() {
                     Legal Agreement
                 </span>
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                    📄 Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 animate-text-shimmer">Service</span>
+                    <span className="text-gray-900">📄 Terms of</span> <span className="text-blue-600">Service</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     Please read these terms carefully before using VitalBlink
@@ -307,11 +307,11 @@ export default function TermsPage() {
                         <ul className="space-y-3">
                             <li className="flex items-center text-gray-700">
                                 <Mail className="h-5 w-5 text-blue-600 mr-3" />
-                                <span><strong>Email:</strong> legal@vitalblink.com</span>
+                                <span><strong>Email:</strong> contact@vitalblink.store</span>
                             </li>
                             <li className="flex items-center text-gray-700">
                                 <Globe className="h-5 w-5 text-blue-600 mr-3" />
-                                <span><strong>Website:</strong> www.vitalblink.com/terms</span>
+                                <span><strong>Website:</strong> www.vitalblink.store/terms</span>
                             </li>
                         </ul>
                     </div>

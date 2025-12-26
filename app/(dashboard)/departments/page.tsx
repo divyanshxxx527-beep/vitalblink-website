@@ -12,11 +12,11 @@ export default function DepartmentsPage() {
                 <span className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
                     26+ Departments
                 </span>
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">26+</span> Medical Departments
+                <h1 className="text-6xl font-black mb-4 animate-fade-in-up animation-delay-200">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">26+</span> <span className="text-gray-900">Departments</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Support for department-specific workflows and documentation.
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-semibold">
+                    Every specialty. Fully supported.
                 </p>
             </div>
 

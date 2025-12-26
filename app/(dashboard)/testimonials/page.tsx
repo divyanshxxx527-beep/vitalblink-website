@@ -12,7 +12,7 @@ export default function TestimonialsPage() {
                     <span className="text-sm font-bold">Trusted by Healthcare Professionals</span>
                 </div>
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                    Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Stories</span>
+                    <span className="text-gray-900">Success</span> <span className="text-indigo-600">Stories</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     See how hospitals and clinics worldwide are transforming their operations with VitalBlink

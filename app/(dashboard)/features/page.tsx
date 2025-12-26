@@ -1,12 +1,47 @@
+"use client";
+
 import {
     Heart, Shield, Zap, Users, Database, FileText,
     Activity, Clock, Building2, Smartphone, Lock,
     BarChart3, Pill, Microscope, Syringe, Stethoscope,
     Ambulance, Bone, Eye, Baby, AlertCircle, Check, Calendar,
-    Scan, UtensilsCrossed, TrendingUp, Bell, MapPin, Layers, QrCode, ArrowRight
+    Scan, UtensilsCrossed, TrendingUp, Bell, MapPin, Layers, QrCode, ArrowRight, X
 } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 export default function FeaturesPage() {
+    const [selectedFeature, setSelectedFeature] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const card1Ref = useRef<HTMLDivElement | null>(null);
+    const card2Ref = useRef<HTMLDivElement | null>(null);
+    const card3Ref = useRef<HTMLDivElement | null>(null);
+    const card4Ref = useRef<HTMLDivElement | null>(null);
+    const card5Ref = useRef<HTMLDivElement | null>(null);
+    const card6Ref = useRef<HTMLDivElement | null>(null);
+
+    const handleMouseMove = (e: React.MouseEvent, cardRef: React.RefObject<HTMLDivElement | null>) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (x - centerX) / 10;
+        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const handleMouseLeave = (cardRef: React.RefObject<HTMLDivElement | null>) => {
+        if (cardRef.current) {
+            cardRef.current.style.transform = '';
+        }
+    };
+
+    const handleFeatureClick = (feature: any) => {
+        setSelectedFeature(feature);
+        setIsModalOpen(true);
+    };
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             {/* Header */}
@@ -14,11 +49,11 @@ export default function FeaturesPage() {
                 <span className="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
                     All Features
                 </span>
-                <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up animation-delay-200">
-                    Hospital Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Features</span>
+                <h1 className="text-5xl font-black mb-6 leading-tight animate-fade-in-up animation-delay-200">
+                    <span className="text-gray-900">Every Feature</span> <span className="text-indigo-600">You Need</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Tools to manage hospital operations — secure and easy to use.
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-semibold">
+                    Complete hospital management. Simplified.
                 </p>
             </div>
 
@@ -28,18 +63,18 @@ export default function FeaturesPage() {
                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wide mb-4 animate-fade-in-up magnetic-hover">
                         Essential Features
                     </span>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                        Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Features</span>
+                    <h2 className="text-5xl font-black text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
+                        Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Essentials</span>
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-400">
-                        Practical features for clinical and administrative workflows
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-400 font-medium">
+                        Everything critical. Nothing extra.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ perspective: '1000px' }}>
                     <FeatureCard
                         icon={<Users className="h-8 w-8" />}
-                        title="Patient Management"
-                        description="EHR with patient records, scheduling, and secure storage."
+                        title="Patient Records"
+                        description="Complete EHR with scheduling and secure data."
                         features={[
                             'Patient registration & profiles',
                             'Medical history tracking',
@@ -48,12 +83,28 @@ export default function FeaturesPage() {
                             'Patient portal access',
                             'Family member linkage'
                         ]}
+                        cardRef={card1Ref}
+                        onMouseMove={(e) => handleMouseMove(e, card1Ref)}
+                        onMouseLeave={() => handleMouseLeave(card1Ref)}
+                        onClick={() => handleFeatureClick({
+                            icon: <Users className="h-8 w-8" />,
+                            title: "Patient Management",
+                            description: "EHR with patient records, scheduling, and secure storage.",
+                            features: [
+                                'Patient registration & profiles',
+                                'Medical history tracking',
+                                'Appointment scheduling',
+                                'Visit records & documentation',
+                                'Patient portal access',
+                                'Family member linkage'
+                            ]
+                        })}
                     />
 
                     <FeatureCard
                         icon={<Shield className="h-8 w-8" />}
-                        title="Security & Compliance"
-                        description="Role-based access, audit logging, and secure medical storage."
+                        title="Enterprise Security"
+                        description="Role-based access. Audit logs. Total compliance."
                         features={[
                             'Secure medical data storage',
                             'Role-based access control (RBAC)',
@@ -62,12 +113,28 @@ export default function FeaturesPage() {
                             'Data backup & recovery',
                             'Healthcare compliance support'
                         ]}
+                        cardRef={card2Ref}
+                        onMouseMove={(e) => handleMouseMove(e, card2Ref)}
+                        onMouseLeave={() => handleMouseLeave(card2Ref)}
+                        onClick={() => handleFeatureClick({
+                            icon: <Shield className="h-8 w-8" />,
+                            title: "Security & Compliance",
+                            description: "Role-based access, audit logging, and secure medical storage.",
+                            features: [
+                                'Secure medical data storage',
+                                'Role-based access control (RBAC)',
+                                'Audit logging',
+                                'Session management',
+                                'Data backup & recovery',
+                                'Healthcare compliance support'
+                            ]
+                        })}
                     />
 
                     <FeatureCard
                         icon={<FileText className="h-8 w-8" />}
-                        title="Billing & Invoicing"
-                        description="Automated billing with insurance claims, payments, and reporting."
+                        title="Smart Billing"
+                        description="Automated invoices, claims, and payments."
                         features={[
                             'Automated invoice generation',
                             'Insurance claims processing',
@@ -80,8 +147,8 @@ export default function FeaturesPage() {
 
                     <FeatureCard
                         icon={<Database className="h-8 w-8" />}
-                        title="Inventory Management"
-                        description="Inventory control for supplies, pharmacy, and equipment."
+                        title="Inventory Control"
+                        description="Track supplies, pharmacy, and equipment."
                         features={[
                             'Medical supplies tracking',
                             'Pharmacy inventory',
@@ -94,8 +161,8 @@ export default function FeaturesPage() {
 
                     <FeatureCard
                         icon={<Activity className="h-8 w-8" />}
-                        title="Medical Tools"
-                        description="Tools for imaging, ECG, and clinical support."
+                        title="Clinical Tools"
+                        description="Imaging, ECG, and diagnostic support."
                         features={[
                             'Medical imaging viewer',
                             'ECG and diagnostic analysis',
@@ -108,8 +175,8 @@ export default function FeaturesPage() {
 
                     <FeatureCard
                         icon={<BarChart3 className="h-8 w-8" />}
-                        title="Analytics & Reporting"
-                        description="Dashboards and reports for data-driven decisions."
+                        title="Live Analytics"
+                        description="Real-time dashboards and custom reports."
                         features={[
                             'Real-time dashboard',
                             'Custom report generation',
@@ -673,7 +740,7 @@ export default function FeaturesPage() {
                     </div>
                 </div>
             </section>
-        </main >
+        </main>
     );
 }
 
@@ -681,12 +748,20 @@ function FeatureCard({
     icon,
     title,
     description,
-    features
+    features,
+    onClick,
+    cardRef,
+    onMouseMove,
+    onMouseLeave
 }: {
     icon: React.ReactNode;
     title: string;
     description: string;
     features: string[];
+    onClick?: () => void;
+    cardRef?: React.RefObject<HTMLDivElement | null>;
+    onMouseMove?: (e: React.MouseEvent) => void;
+    onMouseLeave?: () => void;
 }) {
     // Define color schemes for different cards
     const colorSchemes = [
@@ -702,7 +777,7 @@ function FeatureCard({
     const colors = colorSchemes[colorIndex];
 
     return (
-        <div className={`group relative bg-gradient-to-br ${colors.bg} border-2 ${colors.border} rounded-2xl p-8 hover:shadow-2xl ${colors.glow} transition-all duration-300 hover:-translate-y-1 overflow-hidden hover-lift interactive-card animate-slide-in-up`} style={{ animationDelay: `${Math.abs(title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % 6 * 0.1}s` }}>
+        <div ref={cardRef} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} className={`group relative bg-gradient-to-br ${colors.bg} border-2 ${colors.border} rounded-2xl p-8 hover:shadow-2xl ${colors.glow} transition-all duration-300 hover:-translate-y-1 overflow-hidden hover-lift interactive-card animate-slide-in-up cursor-pointer`} onClick={onClick} style={{ animationDelay: `${Math.abs(title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)) % 6 * 0.1}s` }}>
             {/* Decorative corner gradient */}
             <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${colors.accent} opacity-20 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-500`}></div>
 
@@ -863,3 +938,4 @@ function TechFeature({
         </div>
     );
 }
+

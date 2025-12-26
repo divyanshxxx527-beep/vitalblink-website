@@ -68,7 +68,7 @@ const editions = getAllEditions();
 import { getContactEmail } from '@/lib/config';
 
 const email = getContactEmail();
-// Returns: "vitalblink.services@gmail.com"
+// Returns: "contact@vitalblink.store"
 ```
 
 ## Where It's Currently Used

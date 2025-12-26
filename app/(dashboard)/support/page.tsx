@@ -12,44 +12,22 @@ export default function SupportPage() {
                 <span className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-100 to-cyan-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
                     We're Here to Help
                 </span>
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                    💬 Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 animate-text-shimmer">Support</span>
+                <h1 className="text-6xl font-black mb-4 animate-fade-in-up animation-delay-200">
+                    <span className="text-gray-900">We've Got</span> <span className="text-indigo-600">You</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Need assistance with VitalBlink? Our support team is ready to help you with any questions or issues.
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-semibold">
+                    Fast support. Clear answers. Real help.
                 </p>
             </div>
-
-            {/* Contact Methods */}
-            <section className="mb-16">
-                <div className="grid md:grid-cols-2 gap-8">
-                    <ContactCard
-                        icon={<Mail className="h-8 w-8" />}
-                        title="Email Support"
-                        description="Send us an email and we'll respond within 24 hours"
-                        contact="vitalblink.services@gmail.com"
-                        action="Send Email"
-                        color="blue"
-                    />
-                    <ContactCard
-                        icon={<Book className="h-8 w-8" />}
-                        title="Documentation"
-                        description="Browse our comprehensive documentation"
-                        contact="Guides, tutorials, and FAQs"
-                        action="View Docs"
-                        color="purple"
-                    />
-                </div>
-            </section>
 
             {/* Support Categories */}
             <section className="mb-16">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                        How Can We <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Help You?</span>
+                    <h2 className="text-5xl font-black text-gray-900 mb-4 animate-fade-in-up">
+                        How Can We <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Help</span>?
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-                        Choose a category to get help with specific topics
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200 font-medium">
+                        Pick your topic. Get instant help.
                     </p>
                 </div>
 
@@ -99,110 +77,55 @@ export default function SupportPage() {
                 </div>
             </section>
 
-            {/* Contact Form */}
+            {/* Contact Information */}
             <section className="mb-16">
                 <div className="relative bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-10 md:p-12 shadow-xl border-2 border-indigo-200 overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
-                    <div className="relative max-w-3xl mx-auto">
-                        <div className="text-center mb-8">
+                    <div className="relative max-w-3xl mx-auto text-center">
+                        <div className="mb-8">
                             <span className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wide mb-3 animate-fade-in-up magnetic-hover">
                                 <Send className="inline h-3 w-3 mr-1" />
                                 Get in Touch
                             </span>
                             <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                                Send Us a <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Message</span>
+                                Send Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Inquiry</span>
                             </h2>
-                            <p className="text-gray-600 animate-fade-in-up animation-delay-400">
-                                Fill out the form below and we'll get back to you as soon as possible
+                            <p className="text-gray-600 animate-fade-in-up animation-delay-400 mb-8">
+                                For all support requests, technical questions, or general inquiries, please email us directly
                             </p>
                         </div>
 
-                        <form className="space-y-6">
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Full Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
-                                        placeholder="John Doe"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Email Address *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
-                                        placeholder="john@example.com"
-                                        required
-                                    />
+                        <div className="bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-2xl p-8 mb-6">
+                            <div className="flex items-center justify-center gap-4 mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <Mail className="h-8 w-8 text-white" />
                                 </div>
                             </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Subject *
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
-                                    placeholder="Brief description of your inquiry"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Category
-                                </label>
-                                <select className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
-                                    <option>General Inquiry</option>
-                                    <option>Installation & Setup</option>
-                                    <option>Technical Support</option>
-                                    <option>Billing Question</option>
-                                    <option>Feature Request</option>
-                                    <option>Bug Report</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Message *
-                                </label>
-                                <textarea
-                                    rows={6}
-                                    className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none resize-none"
-                                    placeholder="Please describe your issue or question in detail..."
-                                    required
-                                ></textarea>
-                            </div>
-
-                            <div className="flex items-start">
-                                <input
-                                    type="checkbox"
-                                    id="privacy"
-                                    className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-                                    required
-                                />
-                                <label htmlFor="privacy" className="ml-3 text-sm text-gray-600">
-                                    I agree to the privacy policy and consent to VitalBlink using my information to respond to my inquiry. *
-                                </label>
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 ripple-effect interactive-card"
+                            <h3 className="text-2xl font-bold text-gray-900 mb-3">Email Us</h3>
+                            <a 
+                                href="mailto:contact@vitalblink.store" 
+                                className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 inline-block mb-4"
                             >
-                                <Send className="h-5 w-5" />
-                                Send Message
-                            </button>
-                        </form>
+                                contact@vitalblink.store
+                            </a>
+                            <p className="text-gray-600 text-sm">
+                                We typically respond within 24 hours
+                            </p>
+                        </div>
+
+                        <a 
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@vitalblink.store&su=Support%20Inquiry"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ripple-effect interactive-card"
+                        >
+                            <Mail className="h-5 w-5" />
+                            Send Email via Gmail
+                        </a>
+                        <p className="text-sm text-gray-500 mt-4">
+                            Or email directly: <a href="mailto:contact@vitalblink.store" className="text-indigo-600 hover:text-indigo-700 font-semibold">contact@vitalblink.store</a>
+                        </p>
                     </div>
                 </div>
             </section>

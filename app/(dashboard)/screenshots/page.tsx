@@ -50,7 +50,7 @@ export default function ScreenshotsPage() {
                         Visual Tour
                     </span>
                     <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                        VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600">Screenshots</span>
+                        <span className="text-gray-900">VitalBlink</span> <span className="text-indigo-600">Screenshots</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         Explore the interface and key features of VitalBlink. <span className="block mt-2 text-indigo-600 font-semibold">Click a screenshot to view fullscreen</span>

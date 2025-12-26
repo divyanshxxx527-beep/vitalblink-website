@@ -76,12 +76,12 @@ export default function VitalSpherePage() {
                                 <Heart className="h-4 w-4 mr-2" />
                                 <span className="text-sm font-semibold">Clinical Browser</span>
                             </div>
-                            <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl leading-tight">
+                            <h1 className="text-5xl font-black text-gray-900 tracking-tight sm:text-6xl md:text-7xl leading-tight">
                                 VitalSphere
-                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mt-2">Medical Browser & Toolkit</span>
+                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mt-2">Medical Browser</span>
                             </h1>
-                            <p className="mt-6 text-lg text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
-                                Cross-platform desktop app combining a medical browser, DICOM imaging, and 85+ medical calculators. Built with Electron for Windows, macOS, and Linux.
+                            <p className="mt-6 text-xl text-gray-700 sm:mt-5 sm:text-2xl leading-relaxed font-semibold">
+                                DICOM imaging • 85+ calculators • Cross-platform
                             </p>
                             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                                 <div className="flex flex-col sm:flex-row gap-4">

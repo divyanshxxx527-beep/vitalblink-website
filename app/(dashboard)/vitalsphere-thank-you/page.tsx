@@ -122,11 +122,11 @@ export default function VitalSphereThankYouPage() {
             Our team is here to help. Reach out to us at:
           </p>
           <a
-            href="mailto:vitalblink.services@gmail.com"
+            href="mailto:contact@vitalblink.store"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 shadow-lg"
           >
             <Mail className="h-5 w-5" />
-            vitalblink.services@gmail.com
+            contact@vitalblink.store
           </a>
         </div>
 

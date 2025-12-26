@@ -12,11 +12,11 @@ export default function DocumentationPage() {
                 <span className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-sm font-semibold mb-4 animate-fade-in-up magnetic-hover">
                     Complete Guide
                 </span>
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                    📚 VitalBlink <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 animate-text-shimmer">Documentation</span>
+                <h1 className="text-6xl font-black mb-4 animate-fade-in-up animation-delay-200">
+                    <span className="text-gray-900">Complete</span> <span className="text-indigo-600">Guide</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-                    Comprehensive guide to installing, configuring, and using the VitalBlink Hospital Management System
+                <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-semibold">
+                    Everything you need to get started.
                 </p>
             </div>
 
@@ -26,8 +26,8 @@ export default function DocumentationPage() {
                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-wide mb-4 animate-fade-in-up magnetic-hover">
                         Getting Started
                     </span>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
-                        Quick <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Start Guide</span>
+                    <h2 className="text-5xl font-black text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
+                        Get Started <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Fast</span>
                     </h2>
                 </div>
 
@@ -66,8 +66,8 @@ export default function DocumentationPage() {
             {/* Main Documentation Sections */}
             <section className="mb-16">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
-                        Documentation <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Sections</span>
+                    <h2 className="text-5xl font-black text-gray-900 mb-4 animate-fade-in-up">
+                        Full <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Documentation</span>
                     </h2>
                 </div>
 
