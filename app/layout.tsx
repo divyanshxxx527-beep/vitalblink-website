@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Manrope } from 'next/font/google';
+import { ErrorBoundary } from '@/components/error-boundary';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vitalblink.com'),
@@ -98,7 +99,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`min-h-[100dvh] bg-gray-50 text-black ${manrope.className}`}>
-        {children}
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
       </body>
     </html>
   );

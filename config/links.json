@@ -36,7 +36,7 @@
       },
       "vitalsphere": {
         "name": "VitalSphere Browser",
-        "url": "https://www.dropbox.com/scl/fi/krki2raw90ed8sk18yq6v/VitalSphere_setup.exe?rlkey=y4chduyyzi4rencjocokturxq&st=enwhzk5q&dl=1",
+        "url": "https://www.dropbox.com/scl/fi/krki2raw90ed8sk18yq6v/VitalSphere_setup.exe?rlkey=y4chduyyzi4rencjocokturxq&st=enwhzk5q&dl=1&raw=1",
         "fileName": "VitalSphere_setup.exe",
         "description": "Cross-platform medical browser with DICOM imaging and privacy features",
         "fileSize": "478 MB",
@@ -45,7 +45,7 @@
       },
       "vitalblink_trial": {
         "name": "VitalBlink Trial",
-        "url": "https://www.dropbox.com/scl/fi/me0kqld0cem5d91j0bt0l/Vitalblink.zip?rlkey=t9vpa954gk0w9z29dhdt000le&st=hizmk7ml&dl=0",
+        "url": "https://www.dropbox.com/scl/fi/me0kqld0cem5d91j0bt0l/Vitalblink.zip?rlkey=t9vpa954gk0w9z29dhdt000le&st=hizmk7ml&dl=1&raw=1",
         "fileName": "Vitalblink.zip",
         "description": "VitalBlink trial version for evaluation",
         "version": "1.0.0",

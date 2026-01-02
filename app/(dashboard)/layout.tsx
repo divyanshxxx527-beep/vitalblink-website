@@ -70,6 +70,13 @@ function Navigation() {
           VitalSphere Browser
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up animation-delay-600"></span>
         </Link>
+        <Link
+          href="/affiliate"
+          className="text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative group magnetic-hover"
+        >
+          Affiliate
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-600 group-hover:w-full transition-all duration-300 animate-slide-in-up animation-delay-650"></span>
+        </Link>
         <Button asChild className="rounded-full bg-indigo-600 hover:bg-indigo-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-indigo-500/50">
           <Link href="/pricing">Get Started</Link>
         </Button>
@@ -142,6 +149,13 @@ function Navigation() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               VitalSphere Browser
+            </Link>
+            <Link
+              href="/affiliate"
+              className="text-sm font-medium text-gray-700 hover:text-indigo-600 hover:translate-x-2 transition-all duration-300 animate-slide-in-up animation-delay-650"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Affiliate
             </Link>
             <Button asChild className="rounded-full bg-indigo-600 hover:bg-indigo-700 w-full hover-lift ripple-effect">
               <Link href="/pricing">Get Started</Link>
