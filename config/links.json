@@ -3,7 +3,7 @@
     "downloads": {
       "installer": {
         "name": "VitalBlink Setup (Windows)",
-        "url": "https://vitalblink.gumroad.com/l/vitalblink-setup",
+        "url": "https://vitalblink.gumroad.com/l/vitalblink-setup?wanted=true",
         "fileName": "VitalBlink_Setup.exe",
         "description": "Complete installation package for Windows",
         "fileSize": "250 MB",
@@ -12,7 +12,7 @@
       },
       "clinic": {
         "name": "VitalBlink Clinic Edition",
-        "url": "https://vitalblink.gumroad.com/l/ejwxuf",
+        "url": "https://vitalblink.gumroad.com/l/ejwxuf?wanted=true",
         "price": 299,
         "originalPrice": 399,
         "description": "Perfect for Small Clinics - Choose 1 Medical Department",
@@ -20,7 +20,7 @@
       },
       "plus": {
         "name": "VitalBlink Plus Edition",
-        "url": "https://vitalblink.gumroad.com/l/ypucsz",
+        "url": "https://vitalblink.gumroad.com/l/ypucsz?wanted=true",
         "price": 499,
         "originalPrice": 619,
         "description": "Multi-department management for growing healthcare facilities - Choose 3 Departments",
@@ -28,7 +28,7 @@
       },
       "pro": {
         "name": "VitalBlink Pro Edition",
-        "url": "https://vitalblink.gumroad.com/l/pjrxf",
+        "url": "https://vitalblink.gumroad.com/l/pjrxf?wanted=true",
         "price": 699,
         "originalPrice": 899,
         "description": "The ultimate hospital management system with all 26+ Medical Departments",
