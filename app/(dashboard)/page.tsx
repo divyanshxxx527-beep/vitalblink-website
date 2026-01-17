@@ -77,8 +77,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Sleek Auto-Hide Trial Banner */}
-      <section className={`bg-gradient-to-r from-emerald-50/80 via-green-50/80 to-emerald-100/80 py-5 md:sticky md:top-0 md:z-50 shadow-lg overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-sm border-b border-white/30 ${isBannerVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-        }`}>
+      <section className="bg-gradient-to-r from-emerald-50/80 via-green-50/80 to-emerald-100/80 py-5 md:sticky md:top-0 md:z-50 shadow-lg overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-sm border-b border-white/30 translate-y-0 opacity-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link href="/trial" className="block group">
             <div className="flex items-center justify-center gap-6 text-gray-900 cursor-pointer hover:scale-102 transition-all duration-300 magnetic-hover interactive-card p-5 rounded-3xl backdrop-blur-sm border border-white/40 shadow-lg hover:shadow-emerald-500/30 hover:border-white/60">
@@ -111,17 +110,25 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="sm:text-center">
-              <div className="inline-flex items-center bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full mb-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up">
-                <Heart className="h-4 w-4 mr-2 animate-pulse" />
-                <span className="text-sm font-semibold">Professional Healthcare Software</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-emerald-500 to-green-500 text-white px-6 py-3 rounded-full mb-4 shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in-up">
+                <Heart className="h-5 w-5 mr-2 animate-pulse" />
+                <span className="text-base font-bold">Enterprise Software at Startup Prices</span>
               </div>
               <h1 className="text-5xl font-black text-gray-900 tracking-tight sm:text-6xl md:text-7xl leading-tight animate-fade-in-up animation-delay-400" style={{ transform: `translateY(${heroScrollY * 0.3}px)` }}>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-600 mt-2 animate-fade-in-up animation-delay-400">Hospital Management</span>
-                <span className="block text-gray-900 mt-2">Made Simple</span>
+                <span className="block text-gray-900 mt-2">Complete Hospital System</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600 mt-2 animate-fade-in-up animation-delay-400">Starting at Just $299</span>
               </h1>
-              <p className="mt-6 text-xl text-gray-600 sm:mt-5 sm:text-2xl font-medium leading-relaxed animate-fade-in-up animation-delay-600">
-                26+ Departments • Offline Ready • One-Time Payment
+              <p className="mt-6 text-xl text-gray-600 sm:mt-5 sm:text-2xl font-semibold leading-relaxed animate-fade-in-up animation-delay-600">
+                🏆 Why pay $10,000+/year? Get 26+ Departments • One-Time Payment • Lifetime Updates
               </p>
+              <div className="mt-4 flex flex-wrap gap-3 justify-center items-center animate-fade-in-up animation-delay-700">
+                <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-400 shadow-lg">
+                  <span className="text-lg font-black text-amber-800">💰 Save 90% vs Competitors</span>
+                </div>
+                <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-400 shadow-lg">
+                  <span className="text-lg font-black text-blue-800">🚀 No Monthly Fees</span>
+                </div>
+              </div>
                 <div className="mt-8 max-w-lg mx-auto animate-fade-in-up animation-delay-800" style={{ transform: `translateY(${heroScrollY * 0.1}px)` }}>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/trial" className="w-full sm:w-auto group">
@@ -130,7 +137,7 @@ export default function HomePage() {
                       className="text-lg rounded-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/50 w-full transition-all duration-300 font-semibold transform hover:-translate-y-1 ripple-effect interactive-card"
                     >
                       <Gift className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                      Start Free Trial
+                      Download Free Trial
                     </Button>
                   </Link>
                   <Link href="/pricing" className="w-full sm:w-auto group">

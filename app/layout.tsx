@@ -9,19 +9,35 @@ export const metadata: Metadata = {
     default: 'VitalBlink - Complete Hospital Management System',
     template: '%s | VitalBlink',
   },
-  description: 'Professional hospital management software with 26+ medical departments, patient records, billing, inventory, and advanced security. One blink, full control. Secure, reliable, and affordable healthcare IT solution.',
+  description: 'Professional hospital management software starting at $299. Get 26+ medical departments, unlimited users, EHR, billing, inventory management. One-time payment, lifetime updates. Save 90% vs subscription software.',
   keywords: [
     'hospital management system',
-    'healthcare software',
-    'medical management',
-    'patient records',
-    'hospital billing',
+    'affordable hospital software',
+    'cheap hospital management system',
+    'HMS software price',
+    'hospital software cost',
+    'one-time payment HMS',
     'EHR system',
-    'clinic management',
-    'healthcare IT',
-    'medical inventory',
-    'hospital administration',
+    'clinic management software',
+    'medical practice management',
+    'healthcare software',
+    'patient records software',
+    'hospital billing software',
+    'medical inventory management',
+    'hospital administration software',
+    'electronic health records',
+    'practice management system',
+    'medical software',
+    'healthcare IT solution',
+    'hospital ERP',
+    'clinic software',
     'VitalBlink',
+    'vitalblink hospital',
+    'affordable EHR',
+    'cheap clinic software',
+    'hospital management system India',
+    'HMS for small clinics',
+    'medical software India',
   ],
   authors: [{ name: 'VitalBlink Team' }],
   creator: 'VitalBlink',
@@ -91,11 +107,47 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXTHPG65DX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CXTHPG65DX');
+            `,
+          }}
+        />
         <link 
           rel="alternate" 
           type="application/rss+xml" 
           title="VitalBlink Healthcare Blog RSS Feed" 
           href="/blog/rss.xml" 
+        />
+        {/* Schema.org structured data for organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'VitalBlink',
+              url: 'https://vitalblink.com',
+              logo: 'https://vitalblink.com/default_logo.png',
+              description: 'Professional hospital management software with 26+ medical departments',
+              sameAs: [
+                'https://x.com/vitalblink',
+                'https://www.youtube.com/channel/UCfFuZTlKNywVmA1v8GzuP4Q',
+                'https://github.com/divyanshxxx527-beep'
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'contact@vitalblink.store',
+                contactType: 'Customer Service'
+              }
+            }),
+          }}
         />
       </head>
       <body className={`min-h-[100dvh] bg-gray-50 text-black ${manrope.className}`}>

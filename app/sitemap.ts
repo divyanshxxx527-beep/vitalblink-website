@@ -1,46 +1,42 @@
 import { MetadataRoute } from 'next';
+import { getAllBlogPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://vitalblink.com';
     const currentDate = new Date();
 
-    // Static pages
+    // Static pages with optimized priorities
     const staticPages = [
-        '',
-        '/about',
-        '/features',
-        '/pricing',
-        '/documentation',
-        '/requirements',
-        '/setup',
-        '/departments',
-        '/screenshots',
-        '/testimonials',
-        '/support',
-        '/contact',
-        '/blog',
-        '/terms',
-        '/privacy',
-    ].map((route) => ({
-        url: `${baseUrl}${route}`,
+        { route: '', priority: 1.0, changeFreq: 'daily' as const },
+        { route: '/pricing', priority: 1.0, changeFreq: 'weekly' as const },
+        { route: '/trial', priority: 0.9, changeFreq: 'weekly' as const },
+        { route: '/features', priority: 0.9, changeFreq: 'weekly' as const },
+        { route: '/blog', priority: 0.9, changeFreq: 'daily' as const },
+        { route: '/departments', priority: 0.8, changeFreq: 'monthly' as const },
+        { route: '/documentation', priority: 0.8, changeFreq: 'monthly' as const },
+        { route: '/setup', priority: 0.8, changeFreq: 'monthly' as const },
+        { route: '/vitalsphere', priority: 0.8, changeFreq: 'monthly' as const },
+        { route: '/screenshots', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/testimonials', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/support', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/contact', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/about', priority: 0.6, changeFreq: 'monthly' as const },
+        { route: '/requirements', priority: 0.6, changeFreq: 'monthly' as const },
+        { route: '/terms', priority: 0.4, changeFreq: 'yearly' as const },
+        { route: '/privacy', priority: 0.4, changeFreq: 'yearly' as const },
+    ].map((page) => ({
+        url: `${baseUrl}${page.route}`,
         lastModified: currentDate,
-        changeFrequency: 'weekly' as const,
-        priority: route === '' ? 1.0 : route === '/blog' ? 0.9 : 0.8,
+        changeFrequency: page.changeFreq,
+        priority: page.priority,
     }));
 
-    // Blog posts
-    const blogPosts = [
-        'digital-transformation-healthcare',
-        'patient-data-security',
-        'hospital-efficiency-tips',
-        'ai-healthcare-future',
-        'choosing-hospital-software',
-        'telemedicine-integration',
-    ].map((id) => ({
-        url: `${baseUrl}/blog/${id}`,
-        lastModified: currentDate,
+    // Dynamic blog posts from blog.ts
+    const blogPosts = getAllBlogPosts().map((post) => ({
+        url: `${baseUrl}/blog/${post.id}`,
+        lastModified: new Date(post.date),
         changeFrequency: 'monthly' as const,
-        priority: 0.7,
+        priority: 0.8,
     }));
 
     return [...staticPages, ...blogPosts];

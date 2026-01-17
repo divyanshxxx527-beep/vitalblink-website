@@ -2,6 +2,29 @@ import { Check, Heart, Zap, Sparkles, Crown, Building2, Stethoscope, Gift } from
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { getAllEditions } from '@/lib/config';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pricing - Hospital Management Software from $299 | VitalBlink',
+  description: 'Affordable hospital management software pricing. Clinic Edition $299, Plus Edition $499, Pro Edition $699. One-time payment, lifetime updates, no monthly fees. Save 90% vs subscription software.',
+  keywords: [
+    'hospital management software price',
+    'HMS pricing',
+    'affordable hospital software',
+    'cheap HMS',
+    'hospital software cost',
+    'clinic management software price',
+    'EHR pricing',
+    'medical software cost',
+    'one-time payment HMS',
+    'VitalBlink price',
+  ],
+  openGraph: {
+    title: 'Hospital Management Software Pricing - Starting at $299',
+    description: 'Professional HMS with one-time pricing. Clinic $299, Plus $499, Pro $699. No monthly fees, lifetime updates.',
+    type: 'website',
+  },
+};
 
 export default async function PricingPage() {
   const editions = getAllEditions();
@@ -170,7 +193,7 @@ export default async function PricingPage() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start">
                   <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span><strong>$499</strong> - Choose 5 departments</span>
+                  <span><strong>$499</strong> - Choose 3 departments</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -328,7 +351,7 @@ function EditionCard({
           <div className="text-center mb-4">
             <a href={gumroadLink} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110">
-                Buy {name.split(' ')[1]}
+                Get {name.split(' ')[1]} Now →
               </Button>
             </a>
           </div>

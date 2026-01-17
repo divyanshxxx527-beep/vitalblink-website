@@ -12,7 +12,7 @@
       },
       "clinic": {
         "name": "VitalBlink Clinic Edition",
-        "url": "https://vitalblink.gumroad.com/l/ejwxuf?wanted=true",
+        "url": "https://vitalblink.gumroad.com/l/ejwxuf",
         "price": 299,
         "originalPrice": 399,
         "description": "Perfect for Small Clinics - Choose 1 Medical Department",
@@ -20,7 +20,7 @@
       },
       "plus": {
         "name": "VitalBlink Plus Edition",
-        "url": "https://vitalblink.gumroad.com/l/ypucsz?wanted=true",
+        "url": "https://vitalblink.gumroad.com/l/ypucsz",
         "price": 499,
         "originalPrice": 619,
         "description": "Multi-department management for growing healthcare facilities - Choose 3 Departments",
@@ -28,7 +28,7 @@
       },
       "pro": {
         "name": "VitalBlink Pro Edition",
-        "url": "https://vitalblink.gumroad.com/l/pjrxf?wanted=true",
+        "url": "https://vitalblink.gumroad.com/l/pjrxf",
         "price": 699,
         "originalPrice": 899,
         "description": "The ultimate hospital management system with all 26+ Medical Departments",
@@ -45,7 +45,7 @@
       },
       "vitalblink_trial": {
         "name": "VitalBlink Trial",
-        "url": "https://www.dropbox.com/scl/fi/me0kqld0cem5d91j0bt0l/Vitalblink.zip?rlkey=t9vpa954gk0w9z29dhdt000le&st=hizmk7ml&dl=1&raw=1",
+        "url": "https://www.dropbox.com/scl/fi/me0kqld0cem5d91j0bt0l/Vitalblink.zip?rlkey=t9vpa954gk0w9z29dhdt000le&st=hizmk7ml&dl=1",
         "fileName": "Vitalblink.zip",
         "description": "VitalBlink trial version for evaluation",
         "version": "1.0.0",

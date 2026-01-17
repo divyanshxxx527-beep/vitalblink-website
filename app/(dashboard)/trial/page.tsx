@@ -2,6 +2,27 @@ import { Download, CheckCircle, Clock, Shield, Zap, Heart, Gift, Star } from 'lu
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { getDownloadLink } from '@/lib/config';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free 30-Day Trial - Hospital Management Software | VitalBlink',
+  description: 'Try VitalBlink hospital management software free for 30 days. Full access to all 26+ departments, AI tools, EHR, billing. No credit card required, no limitations, zero risk.',
+  keywords: [
+    'hospital software free trial',
+    'HMS free download',
+    'free hospital management system',
+    'clinic software trial',
+    'EHR free trial',
+    'medical software demo',
+    'hospital system trial',
+    'free HMS',
+  ],
+  openGraph: {
+    title: '30-Day Free Trial - Full Hospital Management System',
+    description: 'Test all features free for 30 days. 26+ departments, unlimited users, no credit card needed.',
+    type: 'website',
+  },
+};
 
 export default function TrialPage() {
     const trialDownload = getDownloadLink('vitalblink_trial');
@@ -55,8 +76,7 @@ export default function TrialPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                             <a
                                 href={trialDownload.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                download="VitalBlink_Trial.zip"
                                 className="flex-1 sm:flex-none"
                             >
                                 <Button
@@ -64,7 +84,7 @@ export default function TrialPage() {
                                     className="w-full sm:w-auto text-xl bg-white text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 rounded-full py-8 px-10 font-bold group ripple-effect interactive-card"
                                 >
                                     <Download className="mr-3 h-7 w-7 group-hover:animate-bounce" />
-                                    Get Started Free
+                                    Download Free Trial
                                 </Button>
                             </a>
                         </div>
@@ -184,15 +204,14 @@ export default function TrialPage() {
                 </p>
                 <a
                     href={trialDownload.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download="VitalBlink_Trial.zip"
                 >
                     <Button
                         size="lg"
                         className="text-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 rounded-full py-8 px-12 font-bold group ripple-effect interactive-card"
                     >
                         <Download className="mr-3 h-7 w-7 group-hover:animate-bounce" />
-                        Start Free Trial
+                        Download Free Trial Now
                     </Button>
                 </a>
                 <p className="text-sm text-gray-500 mt-4 animate-fade-in-up font-medium" style={{ animationDelay: '0.4s' }}>
